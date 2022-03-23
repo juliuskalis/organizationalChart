@@ -1,0 +1,37 @@
+$defaultColor: #e5e7eb;
+$activeColor: #6495ED;
+$switchDimensions: 22px;
+$border: 2px;
+
+.slider {
+  width: calc(#{$switchDimensions} * 2);
+  min-width: calc(#{$switchDimensions} * 2);
+  height: $switchDimensions;
+  background-color: $defaultColor;
+  border-radius: 100px;
+  position: relative;
+  transition-property: background-color;
+  transition-duration: 200ms;
+  cursor: pointer;
+}
+
+.slider:after {
+  content: '';
+  height: calc(#{$switchDimensions} - (#{$border} * 2));
+  width: calc(#{$switchDimensions} - (#{$border} * 2));
+  background-color: white;
+  border-radius: 100px;
+  position: absolute;
+  top: $border;
+  left: $border;
+  transition-property: transform;
+  transition-duration: 200ms;
+}
+
+.sliderIsActive {
+  background-color: $activeColor;
+}
+
+.sliderIsActive.slider:after {
+  transform: translateX($switchDimensions);
+}
