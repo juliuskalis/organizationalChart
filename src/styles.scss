@@ -9,16 +9,18 @@ html, body {
 @tailwind utilities;
 
 
-@media (min-width: 500px) {
+#pc {
   ::-webkit-scrollbar {
     width: 15px;
     height: 15px;
     pointer-events: none;
   }
+
   ::-webkit-scrollbar-track {
     background-color: transparent;
     pointer-events: none;
   }
+
   ::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 10px;
@@ -30,12 +32,14 @@ html, body {
       border-width: 0;
     }
   }
+
   ::-webkit-scrollbar-button {
     width: 0;
     height: 0;
     display: none;
     pointer-events: none;
   }
+
   ::-webkit-scrollbar-corner {
     background-color: transparent;
     pointer-events: none;

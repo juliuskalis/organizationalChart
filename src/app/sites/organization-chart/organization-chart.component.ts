@@ -3,6 +3,7 @@ import {OrganizationChartService} from "../../services/organization-chart.servic
 // @ts-ignore
 import JSONdata from '../../apiData/data.json';
 import {Subject, takeUntil} from "rxjs";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-organization-chart',
@@ -29,7 +30,11 @@ export class OrganizationChartComponent implements OnInit {
 
   destroy: Subject<boolean> = new Subject<boolean>();
 
-  constructor(private organizationChartService: OrganizationChartService) {
+  constructor(private router: Router, private organizationChartService: OrganizationChartService) {
+    const x = localStorage.getItem('device');
+    if (!x) {
+      this.router.navigate(['/device']);
+    }
     console.log('data', this.data);
   }
 

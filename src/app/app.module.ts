@@ -11,6 +11,14 @@ import { OrganizationChartToggleChildrenButtonContentComponent } from './parts/o
 import { SwitchComponent } from './parts/switch/switch.component';
 import { StartComponent } from './sites/start/start.component';
 
+import {
+  FontAwesomeModule,
+  FaIconLibrary,
+} from '@fortawesome/angular-fontawesome';
+import {faDesktop, faMobileButton} from "@fortawesome/free-solid-svg-icons";
+import { DeviceCheckComponent } from './sites/device-check/device-check.component';
+import { SetBodyIdPipe } from './pipes/set-body-id.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,13 +28,23 @@ import { StartComponent } from './sites/start/start.component';
     OrganizationChartSettingsComponent,
     OrganizationChartToggleChildrenButtonContentComponent,
     SwitchComponent,
-    StartComponent
+    StartComponent,
+    DeviceCheckComponent,
+    SetBodyIdPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(library: FaIconLibrary) {
+    library.addIcons(
+      faDesktop,
+      faMobileButton
+    );
+  }
+}
