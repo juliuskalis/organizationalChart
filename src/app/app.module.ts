@@ -9,6 +9,7 @@ import { OrganizationChartChildComponent } from './parts/organization-chart-chil
 import { OrganizationChartSettingsComponent } from './parts/organization-chart-settings/organization-chart-settings.component';
 import { OrganizationChartToggleChildrenButtonContentComponent } from './parts/organization-chart-toggle-children-button-content/organization-chart-toggle-children-button-content.component';
 import { SwitchComponent } from './parts/switch/switch.component';
+import { StartComponent } from './sites/start/start.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SwitchComponent } from './parts/switch/switch.component';
     OrganizationChartChildComponent,
     OrganizationChartSettingsComponent,
     OrganizationChartToggleChildrenButtonContentComponent,
-    SwitchComponent
+    SwitchComponent,
+    StartComponent
   ],
   imports: [
     BrowserModule,
