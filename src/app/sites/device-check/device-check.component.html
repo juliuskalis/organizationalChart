@@ -1,0 +1,18 @@
+<div class="text-center">
+  <div class="text-xl pt-16 text-4xl">Which device are you using?</div>
+  <div class="my-16 bg-gray-100 mx-auto py-8 rounded-2xl w-52 hover:bg-gray-200 duration-300 cursor-pointer" (click)="selectDevice('pc')">
+    <div>
+      <fa-icon [icon]="['fas', 'desktop']" size="8x"></fa-icon>
+    </div>
+    <div class="text-4xl mt-4">pc</div>
+  </div>
+  <div class="px-16">
+    <div class="solidLine max-w-lg mx-auto"></div>
+  </div>
+  <div class="my-16 bg-gray-100 mx-auto py-8 rounded-2xl w-52 hover:bg-gray-200 duration-300 cursor-pointer" (click)="selectDevice('phone')">
+    <div>
+      <fa-icon [icon]="['fas', 'mobile-button']" size="8x"></fa-icon>
+    </div>
+    <div class="text-4xl mt-4">phone</div>
+  </div>
+</div>
