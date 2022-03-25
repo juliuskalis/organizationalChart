@@ -12,19 +12,19 @@ export class DeviceCheckComponent {
 
   selectDevice(val: string) {
     if (val === 'pc') {
-      this.setBodyId('pc');
+      this.setHTMLId('pc');
       localStorage.setItem('device', 'pc');
     } else {
-      this.setBodyId('phone');
+      this.setHTMLId('phone');
       localStorage.setItem('device', 'phone');
     }
     this.router.navigate(['/chart']);
   }
 
-  setBodyId(val: string) {
-    let body = document.getElementsByTagName('body').item(0);
-    if (body) {
-      body.setAttribute('id', val);
+  setHTMLId(val: string) {
+    let html = document.getElementsByTagName('html').item(0);
+    if (html) {
+      html.setAttribute('id', val);
     }
   }
 

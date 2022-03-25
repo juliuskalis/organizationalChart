@@ -9,11 +9,15 @@ html, body {
 @tailwind utilities;
 
 
-.overlay {
-  overflow: auto;
-}
+//.overlay {
+//  overflow: auto;
+//}
 
 #pc {
+  body {
+    overflow: overlay;
+  }
+
   ::-webkit-scrollbar {
     width: 15px;
     height: 15px;
@@ -48,10 +52,7 @@ html, body {
     background-color: transparent;
     pointer-events: none;
   }
-
-  .overlay {
-    overflow: overlay;
-  }
+  
 }
 
 .solidLine {

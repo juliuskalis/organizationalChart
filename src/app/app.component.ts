@@ -9,16 +9,16 @@ export class AppComponent {
   constructor() {
     const device = localStorage.getItem('device');
     if (device && device === 'pc') {
-      this.setBodyId('pc');
+      this.setHTMLId('pc');
     } else {
-      this.setBodyId('phone');
+      this.setHTMLId('phone');
     }
   }
 
-  setBodyId(val: string) {
-    let body = document.getElementsByTagName('body').item(0);
-    if (body) {
-      body.setAttribute('id', val);
+  setHTMLId(val: string) {
+    let html = document.getElementsByTagName('html').item(0);
+    if (html) {
+      html.setAttribute('id', val);
     }
   }
 }
