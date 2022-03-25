@@ -4,7 +4,7 @@
     <div class="h-24 flex justify-between items-center px-8 duration-300" [ngClass]="displayMenu ? 'bg-gray-50/80' : 'bg-white/80'">
       <div class="text-xl">Settings</div>
       <div class="bg-gray-200 w-16 h-16 rounded-full" (click)="toggleMenu()">
-        <div class="w-16 h-16 flex justify-center items-center cursor-pointer duration-300 text-gray-700 text-xl" [ngClass]="displayMenu ? '' : 'rotate-[-180deg]'">
+        <div class="w-16 h-16 flex justify-center items-center cursor-pointer duration-300 text-gray-700 text-xl select-none" [ngClass]="displayMenu ? '' : 'rotate-[-180deg]'">
           <fa-icon [icon]="['fas', 'chevron-up']"></fa-icon>
         </div>
       </div>
