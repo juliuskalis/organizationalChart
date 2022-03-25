@@ -9,6 +9,10 @@ html, body {
 @tailwind utilities;
 
 
+.overlay {
+  overflow: auto;
+}
+
 #pc {
   ::-webkit-scrollbar {
     width: 15px;

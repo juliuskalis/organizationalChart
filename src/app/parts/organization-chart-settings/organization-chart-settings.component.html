@@ -3,9 +3,8 @@
 
     <div class="h-24 flex justify-between items-center px-8 duration-300" [ngClass]="displayMenu ? 'bg-gray-50/80' : 'bg-white/80'">
       <div class="text-xl">Settings</div>
-      <div class="bg-gray-200 duration-100 w-16 h-16 rounded-full flex justify-center items-center cursor-pointer" (click)="toggleMenu()">
-        <!--        <i class="fal fa-chevron-up text-xl text-gray-700 duration-300" [ngClass]="displayMenu ? '' : 'rotate-180'"></i>-->
-        <img src="../../../assets/icons/winkel-unten.svg" alt="Opens the Menu" class="duration-300 opacity-70 w-6" [ngClass]="displayMenu ? '' : 'rotate-180'">
+      <div class="bg-gray-200 w-16 h-16 rounded-full flex justify-center items-center cursor-pointer duration-300 text-gray-700 text-xl" [ngClass]="displayMenu ? '' : 'rotate-[-180deg]'" (click)="toggleMenu()">
+          <fa-icon [icon]="['fas', 'chevron-up']"></fa-icon>
       </div>
     </div>
 
@@ -33,17 +32,17 @@
             <div class="flex items-center">
               <!--              <i class="fal fa-search text-xl mr-2"></i>-->
               <img src="../../../assets/icons/suche.svg" alt="Search Icon" class="opacity-80 w-6 mr-2">
-              <div (click)="resetScaleMultiplier()" class="py-2 px-3 rounded-full" [ngClass]="scaleMultiplier === 100 ? 'cursor-default' : 'cursor-pointer hover:bg-gray-100'" [title]="scaleMultiplier === 100 ? '' : 'Zurück setzen'">{{scaleMultiplier}}%
+              <div (click)="resetScaleMultiplier()" class="py-2 px-3 rounded-full" [ngClass]="scaleMultiplier === 100 ? 'cursor-default' : 'cursor-pointer bg-gray-200 hover:bg-gray-300 duration-100'" [title]="scaleMultiplier === 100 ? '' : 'Zurück setzen'">{{scaleMultiplier}}%
               </div>
             </div>
             <div class="flex gap-x-2">
-              <div class="w-12 h-12 bg-gray-200 flex justify-center items-center rounded-full select-none text-xl"
+              <div class="w-12 h-12 bg-gray-200 flex justify-center items-center rounded-full select-none text-xl hover:bg-gray-300 duration-100"
                    [ngClass]="scaleMultiplier === 10 ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'"
                    (click)="setScaleMultiplier(false)">
                 <!--                <i class="fal fa-minus"></i>-->
                 <img src="../../../assets/icons/minus.svg" alt="Zooms content smaller" class="opacity-80 w-3">
               </div>
-              <div class="w-12 h-12 bg-gray-200 flex justify-center items-center rounded-full select-none text-xl"
+              <div class="w-12 h-12 bg-gray-200 flex justify-center items-center rounded-full select-none text-xl hover:bg-gray-300 duration-100"
                    [ngClass]="scaleMultiplier === 200 ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'"
                    (click)="setScaleMultiplier(true)">
                 <!--                <i class="fal fa-plus"></i>-->

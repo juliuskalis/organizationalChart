@@ -15,7 +15,11 @@ import {
   FontAwesomeModule,
   FaIconLibrary,
 } from '@fortawesome/angular-fontawesome';
-import {faDesktop, faMobileButton} from "@fortawesome/free-solid-svg-icons";
+import {
+  faChevronUp,
+  faDesktop,
+  faMobileButton
+} from "@fortawesome/free-solid-svg-icons";
 import { DeviceCheckComponent } from './sites/device-check/device-check.component';
 import { SetBodyIdPipe } from './pipes/set-body-id.pipe';
 
@@ -44,7 +48,8 @@ export class AppModule {
   constructor(library: FaIconLibrary) {
     library.addIcons(
       faDesktop,
-      faMobileButton
+      faMobileButton,
+      faChevronUp
     );
   }
 }
