@@ -7,7 +7,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'chart', pathMatch: 'full' },
   { path: 'chart', component: OrganizationChartComponent },
   { path: 'device', component: DeviceCheckComponent },
-  { path: '**', redirectTo: '', pathMatch: 'full' },
+  { path: '**', redirectTo: 'chart', pathMatch: 'full' },
 ];
 
 @NgModule({
