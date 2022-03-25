@@ -3,14 +3,16 @@
 
     <div class="h-24 flex justify-between items-center px-8 duration-300" [ngClass]="displayMenu ? 'bg-gray-50/80' : 'bg-white/80'">
       <div class="text-xl">Settings</div>
-      <div class="bg-gray-200 w-16 h-16 rounded-full" (click)="toggleMenu()">
+      <div class="bg-gray-200 w-16 h-16 rounded-full hover:bg-gray-300 duration-100" (click)="toggleMenu()">
         <div class="w-16 h-16 flex justify-center items-center cursor-pointer duration-300 text-gray-700 text-xl select-none" [ngClass]="displayMenu ? '' : 'rotate-[-180deg]'">
           <fa-icon [icon]="['fas', 'chevron-up']"></fa-icon>
         </div>
       </div>
     </div>
 
-    <div class="bg-white/80 overflow-auto duration-300 overlay" [ngStyle]="{'height': displayMenu ? 'calc(100vh - 12rem)' : '0'}">
+    <div class="bg-white/80 duration-300" [ngStyle]="{'height': displayMenu ? '111px' : '0'}">
+<!--      overflow-auto overlay-->
+<!--      calc(100vh - 12rem)-->
       <div class="p-8 flex flex-col gap-y-4">
 
         <!--        <div>-->
@@ -54,7 +56,7 @@
           </div>
         </div>
 
-        <div class="solidLine"></div>
+<!--        <div class="solidLine"></div>-->
 
         <div *ngIf="clipped !== 'null'">
           <div class="text-green-700 uppercase text-sm">Angepinnt</div>
