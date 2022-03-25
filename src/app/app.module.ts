@@ -18,7 +18,9 @@ import {
 import {
   faChevronUp,
   faDesktop,
-  faMobileButton
+  faMobileButton,
+  faPlus,
+  faMinus
 } from "@fortawesome/free-solid-svg-icons";
 import { DeviceCheckComponent } from './sites/device-check/device-check.component';
 import { SetBodyIdPipe } from './pipes/set-body-id.pipe';
@@ -49,7 +51,9 @@ export class AppModule {
     library.addIcons(
       faDesktop,
       faMobileButton,
-      faChevronUp
+      faChevronUp,
+      faPlus,
+      faMinus
     );
   }
 }

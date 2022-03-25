@@ -1,6 +1,6 @@
 <ng-container *ngIf="item.displayChildren">
-  <img src="../../../assets/icons/minus.svg" alt="Closes children" class="w-2 invert">
+  <fa-icon [icon]="['fas', 'minus']" size="xs"></fa-icon>
 </ng-container>
 <ng-container *ngIf="!item.displayChildren">
-  <img src="../../../assets/icons/plus.svg" alt="Opens children" class="w-2 invert">
+  <fa-icon [icon]="['fas', 'plus']" size="xs"></fa-icon>
 </ng-container>
