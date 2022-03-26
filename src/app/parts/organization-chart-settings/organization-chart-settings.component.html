@@ -1,14 +1,14 @@
-<div class="positioning fixed z-30" [ngClass]="layoutType === 'pc' ? 'top-12 left-12' : 'bottom-4 left-4 customWidthForPhone'">
-  <div class="rounded-xl overflow-hidden backdrop-blur" [ngClass]="layoutType === 'pc' ? 'customResponsiveWidthForPC' : ''">
+<div class="fixed z-30" [ngClass]="layoutType === 'pc' ? 'top-12 left-12' : 'bottom-4 left-4'">
+  <div class="rounded-xl overflow-hidden backdrop-blur" [ngClass]="layoutType === 'pc' ? 'customResponsiveWidthForPC' : 'customWidthForPhone'">
 
-    <app-part-organization-chart-settings-options [data]="data" [displayMenu]="displayMenu" *ngIf="layoutType === 'phone'"></app-part-organization-chart-settings-options>
+    <app-part-organization-chart-settings-options *ngIf="layoutType === 'phone'" [data]="data" [displayMenu]="displayMenu"></app-part-organization-chart-settings-options>
 
     <div class="h-24 flex duration-300 z-10" [ngClass]="displayMenu ? 'bg-gray-50/80' : 'bg-white/80'">
       <div class="hidden">Button</div>
       <div class="flex justify-between items-center w-full px-8">
         <div class="text-xl">Settings</div>
-        <div class="bg-gray-200 w-16 h-16 rounded-full hover:bg-gray-300 duration-100" (click)="toggleMenu()">
-          <div class="w-16 h-16 flex justify-center items-center cursor-pointer duration-300 text-gray-700 text-xl outline-none"
+        <div class="bg-gray-200 w-16 h-16 rounded-full cursor-pointer hover:bg-gray-300 duration-100" (click)="toggleMenu()">
+          <div class="w-16 h-16 flex justify-center items-center duration-300 text-gray-700 text-xl pointer-events-none"
             [ngClass]="displayMenu ? '' : layoutType === 'pc' ? 'rotate-[-180deg]' : 'rotate-180'">
             <fa-icon [icon]="['fas', 'chevron-up']" *ngIf="layoutType === 'pc'"></fa-icon>
             <fa-icon [icon]="['fas', 'chevron-down']" *ngIf="layoutType === 'phone'"></fa-icon>
@@ -17,7 +17,7 @@
       </div>
     </div>
 
-    <app-part-organization-chart-settings-options [data]="data" [displayMenu]="displayMenu" *ngIf="layoutType === 'pc'"></app-part-organization-chart-settings-options>
+    <app-part-organization-chart-settings-options *ngIf="layoutType === 'pc'" [data]="data" [displayMenu]="displayMenu"></app-part-organization-chart-settings-options>
 
   </div>
 </div>

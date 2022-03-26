@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 // @ts-ignore
 import JSONdata from "../../apiData/data.json";
 
@@ -9,19 +9,14 @@ import JSONdata from "../../apiData/data.json";
 })
 export class OrganizationChartSettingsComponent {
 
+  @Input() layoutType: string = 'pc';
+
   data: any[] = JSONdata;
 
   displayMenu: boolean = true;
 
-  layoutType: string = 'pc';
-
   constructor() {
-    const device = localStorage.getItem('device');
-    if (device && device === 'pc') {
-      this.layoutType ='pc';
-    } else {
-      this.layoutType ='phone';
-    }
+
     const e = localStorage.getItem('displayMenu');
     if (e) {
       this.displayMenu = JSON.parse(e);
