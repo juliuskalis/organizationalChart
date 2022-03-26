@@ -1,0 +1,7 @@
+.customResponsiveWidthForPC {
+  width: clamp(100%, calc(100vw - 6rem), 350px);
+}
+
+.customWidthForPhone {
+  width: calc(100% - 2rem);
+}

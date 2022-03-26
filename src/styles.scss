@@ -9,10 +9,6 @@ html, body {
 @tailwind utilities;
 
 
-//.overlay {
-//  overflow: auto;
-//}
-
 #pc {
   body {
     overflow: overlay;
@@ -52,7 +48,7 @@ html, body {
     background-color: transparent;
     pointer-events: none;
   }
-  
+
 }
 
 .solidLine {
