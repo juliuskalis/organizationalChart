@@ -41,21 +41,14 @@ export class OrganizationChartComponent implements OnInit {
     const device = localStorage.getItem('device');
     if (device) {
       if (device === 'pc') {
-        this.setHTMLId('pc');
+        document.getElementsByTagName('html').item(0)?.setAttribute('id', 'pc');
         this.layoutType ='pc'
       } else {
-        this.setHTMLId('phone');
+        document.getElementsByTagName('html').item(0)?.setAttribute('id', 'phone');
         this.layoutType ='phone'
       }
     } else {
       this.router.navigate(['/device']);
-    }
-  }
-
-  setHTMLId(val: string) {
-    let html = document.getElementsByTagName('html').item(0);
-    if (html) {
-      html.setAttribute('id', val);
     }
   }
 

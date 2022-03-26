@@ -12,20 +12,13 @@ export class DeviceCheckComponent {
 
   selectDevice(val: string) {
     if (val === 'pc') {
-      this.setHTMLId('pc');
+      document.getElementsByTagName('html').item(0)?.setAttribute('id', 'pc');
       localStorage.setItem('device', 'pc');
     } else {
-      this.setHTMLId('phone');
+      document.getElementsByTagName('html').item(0)?.setAttribute('id', 'phone');
       localStorage.setItem('device', 'phone');
     }
     this.router.navigate(['/chart']);
-  }
-
-  setHTMLId(val: string) {
-    let html = document.getElementsByTagName('html').item(0);
-    if (html) {
-      html.setAttribute('id', val);
-    }
   }
 
 }
