@@ -7,7 +7,7 @@
       <div class="hidden">Button</div>
       <div class="flex justify-between items-center w-full px-8">
         <div class="text-xl">Settings</div>
-        <div class="bg-gray-200 w-16 h-16 rounded-full cursor-pointer hover:bg-gray-300 duration-100" (click)="toggleMenu()">
+        <div class="bg-gray-200 w-16 h-16 rounded-full hover:bg-gray-300 duration-100" (click)="toggleMenu()" [ngClass]="layoutType === 'pc' ? 'cursor-pointer' : ''">
           <div class="w-16 h-16 flex justify-center items-center duration-300 text-gray-700 text-xl pointer-events-none"
             [ngClass]="displayMenu ? '' : layoutType === 'pc' ? 'rotate-[-180deg]' : 'rotate-180'">
             <fa-icon [icon]="['fas', 'chevron-up']" *ngIf="layoutType === 'pc'"></fa-icon>
