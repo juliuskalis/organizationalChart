@@ -28,14 +28,28 @@ export class OrganizationChartComponent implements OnInit {
   currentPinnedUser: any | undefined;
   startFrom: boolean = false;
 
+  layoutType: string = 'pc';
+
   destroy: Subject<boolean> = new Subject<boolean>();
 
   constructor(private router: Router, private organizationChartService: OrganizationChartService) {
-    const x = localStorage.getItem('device');
-    if (!x) {
+    this.checkLayoutType();
+    console.log('data', this.data);
+  }
+
+  checkLayoutType() {
+    const device = localStorage.getItem('device');
+    if (device) {
+      if (device === 'pc') {
+        document.getElementsByTagName('html').item(0)?.setAttribute('id', 'pc');
+        this.layoutType ='pc'
+      } else {
+        document.getElementsByTagName('html').item(0)?.setAttribute('id', 'phone');
+        this.layoutType ='phone'
+      }
+    } else {
       this.router.navigate(['/device']);
     }
-    console.log('data', this.data);
   }
 
   ngOnInit(): void {

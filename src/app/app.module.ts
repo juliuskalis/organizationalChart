@@ -20,10 +20,11 @@ import {
   faDesktop,
   faMobileButton,
   faPlus,
-  faMinus
+  faMinus, faChevronDown
 } from "@fortawesome/free-solid-svg-icons";
 import { DeviceCheckComponent } from './sites/device-check/device-check.component';
 import { SetBodyIdPipe } from './pipes/set-body-id.pipe';
+import { OrganizationChartSettingsOptionsComponent } from './parts/organization-chart-settings-options/organization-chart-settings-options.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { SetBodyIdPipe } from './pipes/set-body-id.pipe';
     SwitchComponent,
     StartComponent,
     DeviceCheckComponent,
-    SetBodyIdPipe
+    SetBodyIdPipe,
+    OrganizationChartSettingsOptionsComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +54,7 @@ export class AppModule {
       faDesktop,
       faMobileButton,
       faChevronUp,
+      faChevronDown,
       faPlus,
       faMinus
     );
