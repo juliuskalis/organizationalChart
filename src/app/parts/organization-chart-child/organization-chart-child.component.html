@@ -1,6 +1,6 @@
 <div [ngClass]="peopleWithoutChildren.length > 0 && peopleWithChildren.length > 0 ? 'flex' : ''">
   <div class='peopleList' *ngIf="peopleWithoutChildren.length > 0">
-    <div class="flex flex-col gap-y-4 p-4 border border-gray-400">
+    <div [ngClass]="peopleWithoutChildren.length === 1 ? '' : 'flex flex-col gap-y-4 p-4 border border-gray-400'"> <!-- creates a css list if length is over 1 -->
       <div *ngFor='let child of peopleWithoutChildren' class='w-full'>
         <app-part-organization-chart-box [item]="child"></app-part-organization-chart-box>
       </div>
