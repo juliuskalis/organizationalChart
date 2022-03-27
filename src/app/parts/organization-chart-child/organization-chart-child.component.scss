@@ -1,1 +1,100 @@
-@import '../../sites/organization-chart/organization-chart.component';
+$lineColor: rgb(156 163 175);
+//$lineColor: rgb(209 213 219);
+$space: 2rem;
+
+
+
+.people {
+  display: flex;
+  padding: 0 1rem;
+}
+
+.people > div:before,
+.people > div:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 1px;
+  width: 50%;
+  background-color: $lineColor;
+}
+
+.people > div:before {
+  left: 0;
+}
+
+.people > div:after {
+  left: 50%;
+}
+
+.people > div:first-of-type:before {
+  width: 0;
+}
+
+.flex > .people > div:first-of-type:before {
+  width: 50%;
+}
+
+.people > div:last-of-type:after {
+  width: 0;
+}
+
+
+
+.peopleList {
+  height: max-content;
+  position: relative;
+  padding: 0 calc(#{$space} / 2);
+}
+
+.flex > .peopleList {
+  margin-top: $space;
+}
+
+.flex > .peopleList:before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: calc(50% - 1px);
+  height: $space;
+  width: 1px;
+  background-color: $lineColor;
+}
+
+.flex > .peopleList:after {
+  content: '';
+  position: absolute;
+  top: -$space;
+  left: calc(50% - 1px);
+  height: 1px;
+  width: calc(50% + (#{$space} / 2) + 1px);
+  background-color: $lineColor;
+}
+
+
+
+.parentPerson {
+  position: relative;
+}
+
+.parentPerson:before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: calc(50% - 1px);
+  height: $space;
+  width: 1px;
+  background-color: $lineColor;
+  pointer-events: none;
+}
+
+.parentPerson:after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: calc(50% - 1px);
+  height: $space;
+  width: 1px;
+  background-color: $lineColor;
+  pointer-events: none;
+}
