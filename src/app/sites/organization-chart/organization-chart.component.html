@@ -2,7 +2,9 @@
   <div class="flex" [ngClass]="layoutType === 'pc' ? '' : 'mb-32'">
     <div id='organigram' [ngStyle]="{'zoom': scaleMultiplier + '%'}" class="p-8 mx-auto">
       <div *ngIf="!startFrom" class='py-4 px-8 bg-white mx-auto max-w-max rounded-xl'>Company</div>
-      <div *ngIf="startFrom" class="mx-auto relative" style="width: 1px;"><div class="absolute top-0 left-0 h-8 bg-gray-200 z-10" style="width: 1px;"></div></div>
+      <div *ngIf="startFrom" class="mx-auto relative" style="width: 1px;">
+        <div class="absolute top-0 left-0 h-8 bg-gray-200 z-10" style="width: 1px;"></div>
+      </div>
       <app-part-organization-chart-child
         [orga]='organizationChart' [showName]='displayName' [showTitle]="displayTitle"
         [clipped]='clipped'

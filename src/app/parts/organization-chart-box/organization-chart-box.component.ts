@@ -10,8 +10,7 @@ export class OrganizationChartBoxComponent {
 
   @Input() item: any | undefined;
 
-  constructor(private organizationChartService: OrganizationChartService) {
-  }
+  constructor(private organizationChartService: OrganizationChartService) {}
 
   selectUser(userId: string | null) {
     this.organizationChartService.setSelectedUserId(userId);

@@ -1,6 +1,6 @@
-$lineColor: #aaa;
-$spaceX: 1rem;
-$spaceY: 2rem;
+$lineColor: rgb(156 163 175);
+//$lineColor: rgb(209 213 219);
+$space: 2rem;
 
 
 
@@ -9,8 +9,8 @@ $spaceY: 2rem;
   padding: 0 1rem;
 }
 
-.people > .box:before,
-.people > .box:after {
+.people > div:before,
+.people > div:after {
   content: '';
   position: absolute;
   top: 0;
@@ -19,42 +19,36 @@ $spaceY: 2rem;
   background-color: $lineColor;
 }
 
-.people > .box:before {
+.people > div:before {
   left: 0;
 }
 
-.people > .box:after {
+.people > div:after {
   left: 50%;
 }
 
-.people > .box:first-of-type:before {
+.people > div:first-of-type:before {
   width: 0;
 }
 
-.flex > .people > .box:first-of-type:before {
+.flex > .people > div:first-of-type:before {
   width: 50%;
 }
 
-.people > .box:last-of-type:after {
+.people > div:last-of-type:after {
   width: 0;
 }
+
+
 
 .peopleList {
   height: max-content;
   position: relative;
-  padding: 0 $spaceX;
-}
-
-.peopleListInner {
-  border: 1px solid $lineColor;
-  display: flex;
-  flex-direction: column;
-  row-gap: 1rem;
-  padding: 1rem;
+  padding: 0 calc(#{$space} / 2);
 }
 
 .flex > .peopleList {
-  margin-top: $spaceY;
+  margin-top: $space;
 }
 
 .flex > .peopleList:before {
@@ -62,7 +56,7 @@ $spaceY: 2rem;
   position: absolute;
   bottom: 100%;
   left: calc(50% - 1px);
-  height: $spaceY;
+  height: $space;
   width: 1px;
   background-color: $lineColor;
 }
@@ -70,115 +64,37 @@ $spaceY: 2rem;
 .flex > .peopleList:after {
   content: '';
   position: absolute;
-  top: -$spaceY;
+  top: -$space;
   left: calc(50% - 1px);
   height: 1px;
-  width: calc(50% + 2rem); // $spaceX
+  width: calc(50% + (#{$space} / 2) + 1px);
   background-color: $lineColor;
 }
 
-.box {
-  padding: 0 $spaceX;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
+
+.parentPerson {
   position: relative;
 }
 
-.peopleListInner > .box {
-  padding: 0;
-}
-
-.headPerson {
-  margin: $spaceY auto;
-  position: relative;
-}
-
-.headPerson:before {
+.parentPerson:before {
   content: '';
   position: absolute;
   bottom: 100%;
   left: calc(50% - 1px);
-  height: $spaceY;
+  height: $space;
   width: 1px;
   background-color: $lineColor;
   pointer-events: none;
 }
 
-.headPerson:after {
+.parentPerson:after {
   content: '';
   position: absolute;
   top: 100%;
   left: calc(50% - 1px);
-  height: $spaceY;
+  height: $space;
   width: 1px;
   background-color: $lineColor;
   pointer-events: none;
-}
-
-.positionButtonBottom {
-  position: absolute;
-  bottom: -0.75rem;
-  left: 50%;
-  transform: translate(-50%, 0);
-  z-index: 1;
-}
-
-
-
-/* Loadingsanimation */
-.lds-ellipsis {
-  display: inline-block;
-  position: relative;
-  width: 80px;
-  height: 80px;
-}
-.lds-ellipsis div {
-  position: absolute;
-  top: 33px;
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
-  background: darkgray;
-  animation-timing-function: cubic-bezier(0, 1, 1, 0);
-}
-.lds-ellipsis div:nth-child(1) {
-  left: 8px;
-  animation: lds-ellipsis1 0.6s infinite;
-}
-.lds-ellipsis div:nth-child(2) {
-  left: 8px;
-  animation: lds-ellipsis2 0.6s infinite;
-}
-.lds-ellipsis div:nth-child(3) {
-  left: 32px;
-  animation: lds-ellipsis2 0.6s infinite;
-}
-.lds-ellipsis div:nth-child(4) {
-  left: 56px;
-  animation: lds-ellipsis3 0.6s infinite;
-}
-@keyframes lds-ellipsis1 {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-@keyframes lds-ellipsis3 {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(0);
-  }
-}
-@keyframes lds-ellipsis2 {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(24px, 0);
-  }
 }
