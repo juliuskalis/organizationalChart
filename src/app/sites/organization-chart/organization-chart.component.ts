@@ -38,17 +38,10 @@ export class OrganizationChartComponent implements OnInit {
   }
 
   checkLayoutType() {
-    const device = localStorage.getItem('device');
-    if (device) {
-      if (device === 'pc') {
-        document.getElementsByTagName('html').item(0)?.setAttribute('id', 'pc');
-        this.layoutType ='pc'
-      } else {
-        document.getElementsByTagName('html').item(0)?.setAttribute('id', 'phone');
-        this.layoutType ='phone'
-      }
+    if (/Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      this.layoutType ='phone';
     } else {
-      this.router.navigate(['/device']);
+      this.layoutType ='pc';
     }
   }
 

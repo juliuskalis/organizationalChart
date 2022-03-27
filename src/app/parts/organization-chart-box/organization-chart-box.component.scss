@@ -1,0 +1,16 @@
+.box {
+  background-color: white;
+  padding: 1rem;
+  width: 100%;
+  white-space: nowrap;
+  border-radius: 10px;
+  cursor: pointer;
+  transition-property: box-shadow;
+  transition-duration: 100ms;
+  user-select: none;
+  position: relative;
+}
+
+.box:hover {
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+}

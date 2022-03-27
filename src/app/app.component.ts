@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor() {}
+  constructor() {
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
+      document.getElementsByTagName('html').item(0)?.setAttribute('id', 'phone');
+    } else {
+      document.getElementsByTagName('html').item(0)?.setAttribute('id', 'pc');
+    }
+  }
 }

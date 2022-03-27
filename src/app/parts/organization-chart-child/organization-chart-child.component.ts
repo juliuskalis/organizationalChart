@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {OrganizationChartService} from "../../services/organization-chart.service";
 
 @Component({
   selector: 'app-part-organization-chart-child',
@@ -13,9 +12,6 @@ export class OrganizationChartChildComponent implements OnInit {
   @Input() showTitle: boolean | undefined;
   @Input() clipped: string | undefined;
   @Input() selectedUser: string | undefined;
-
-  constructor(private organizationChartService: OrganizationChartService) {
-  }
 
   peopleNoChildren: any[] = [];
   peopleWithChildren: any[] = [];
@@ -37,15 +33,6 @@ export class OrganizationChartChildComponent implements OnInit {
     if(child) {
       child.displayChildren = !child.displayChildren;
     }
-  }
-
-  selectUser(userId: string | null) {
-    this.organizationChartService.setSelectedUserId(userId);
-  }
-
-  getFirstAndLastLetter(firstname: string | null, lastname: string | null) {
-    console.log('y');
-    return firstname?.charAt(0) + '' +  lastname?.charAt(0);
   }
 
   clipPerson(id: string | null) {

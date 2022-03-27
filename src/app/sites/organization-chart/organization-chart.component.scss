@@ -1,29 +1,16 @@
 $lineColor: #aaa;
 $spaceX: 1rem;
 $spaceY: 2rem;
-$boxSpace: 1rem;
-$borderRadius: 10px;
-//$tagColor: #282828;
-$tagColor: orange;
-$white: #fff;
-$toggleButton: #6B7280;
 
-
-
-.baseGrid {
-  display: grid;
-  grid-template-columns: 1fr 350px;
-}
 
 
 .people {
   display: flex;
-  justify-content: space-evenly;
   padding: 0 1rem;
 }
 
-.people > div:before,
-.people > div:after {
+.people > .box:before,
+.people > .box:after {
   content: '';
   position: absolute;
   top: 0;
@@ -32,23 +19,23 @@ $toggleButton: #6B7280;
   background-color: $lineColor;
 }
 
-.people > div:before {
+.people > .box:before {
   left: 0;
 }
 
-.people > div:after {
+.people > .box:after {
   left: 50%;
 }
 
-.people > div:first-of-type:before {
+.people > .box:first-of-type:before {
   width: 0;
 }
 
-.flex > .people > div:first-of-type:before {
+.flex > .people > .box:first-of-type:before {
   width: 50%;
 }
 
-.people > div:last-of-type:after {
+.people > .box:last-of-type:after {
   width: 0;
 }
 
@@ -58,10 +45,12 @@ $toggleButton: #6B7280;
   padding: 0 $spaceX;
 }
 
-.peopleList > div {
+.peopleListInner {
   border: 1px solid $lineColor;
   display: flex;
   flex-direction: column;
+  row-gap: 1rem;
+  padding: 1rem;
 }
 
 .flex > .peopleList {
@@ -96,36 +85,16 @@ $toggleButton: #6B7280;
   position: relative;
 }
 
-.person,
+.peopleListInner > .box {
+  padding: 0;
+}
+
 .headPerson {
-  padding: $boxSpace;
-  background-color: #fff;
-  width: fit-content;
-  position: relative;
   margin: $spaceY auto;
-  box-sizing: border-box;
-  white-space: nowrap;
-  border-radius: $borderRadius;
-  cursor: pointer;
-  transition-property: box-shadow;
-  transition-duration: 100ms;
-  user-select: none;
+  position: relative;
 }
 
-.person:hover,
-.headPerson:hover {
-  box-shadow: 0 0 10px rgba(0,0,0,0.15);
-}
-
-.peopleList > div > .box > div > .person {
-  margin: $spaceX auto;
-  width: 100%;
-}
-/*,
-.peopleList > div > .box > div > .headPerson*/
-
-.people > .box > div > .person:before,
-.people > .box > div > .headPerson:before {
+.headPerson:before {
   content: '';
   position: absolute;
   bottom: 100%;
@@ -136,7 +105,7 @@ $toggleButton: #6B7280;
   pointer-events: none;
 }
 
-.people > .box > div > .headPerson:after {
+.headPerson:after {
   content: '';
   position: absolute;
   top: 100%;
@@ -147,104 +116,12 @@ $toggleButton: #6B7280;
   pointer-events: none;
 }
 
-.name {
-  margin-left: 1rem;
-}
-
-.imgBox{
-  background-color: #f2f2f2;
-  border-radius: 100px;
-  width: 60px;
-  height: 60px;
-  overflow: hidden;
-}
-
-.headPerson {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.department {
-  text-transform: uppercase;
-  color: $white;
-  font-weight: 600;
-  background-color: $tagColor;
-  padding: 4px 10px;
-  margin: 0 auto $boxSpace auto;
-  border-radius: $borderRadius;
-}
-
 .positionButtonBottom {
   position: absolute;
   bottom: -0.75rem;
   left: 50%;
   transform: translate(-50%, 0);
-  background-color: $toggleButton;
-  color: $white;
-  width: 1.5rem;
-  height: 1.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   z-index: 1;
-  border-radius: 1rem;
-  cursor: pointer;
-}
-
-.settings {
-  position:  absolute;
-  top: 50px;
-  left: 50px;
-  z-index: 1;
-  background-color: white;
-  padding: 1rem;
-  margin: 4rem;
-  color: white;
-  border-radius: 1rem;
-  user-select: none;
-}
-
-.clipButton{
-  position:  absolute;
-  top: 1rem;
-  right: 1rem;
-  z-index: 1;
-  border-radius: 5px;
-  border: 1px solid #f2f2f2;
-  background-color: #fff;
-  width: 2rem;
-  height: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.selectedUserBoxPosition {
-  position: absolute;
-  top: $spaceY;
-  left: 0;
-  min-width: 300px;
-  z-index: 2;
-  padding-right: 2rem;
-}
-
-.selectedUserBox {
-  border-radius: $borderRadius;
-  box-shadow: 0 0 10px rgba(0,0,0,0.15);
-  overflow: hidden;
-  background-color: #fff;
-}
-
-.peopleList > div > .box > .relative > .selectedUserBoxPosition {
-  top: calc(#{$spaceY} / 2);
-}
-
-.lineClamp {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
 

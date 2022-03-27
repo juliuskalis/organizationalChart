@@ -2,7 +2,7 @@
   <div class='people'> <!-- mit kindern (die keine geschwister ohne kinder haben) -->
     <div *ngFor='let child of peopleWithChildren' class='box'>
       <div class='relative'>
-        <div class='headPerson' (click)='selectUser(child.id)' [title]='child.firstname + " " + child.lastname' [id]="child.id">
+        <div class="headPerson">
           <app-part-organization-chart-box [item]="child"></app-part-organization-chart-box>
         </div>
         <div class='positionButtonBottom' (click)='toggleChildren(child.id)'>
@@ -19,12 +19,10 @@
 <ng-container *ngIf='peopleNoChildren.length > 0 && peopleWithChildren.length > 0 '>
   <div class='flex'>
     <div class='peopleList'> <!-- ohne kinder (bei denen die geschwister kinder haben) -->
-      <div> <!-- div is needed for css structure -->
+      <div class="peopleListInner">
         <div *ngFor='let child of peopleNoChildren' class='box'>
-          <div class='relative w-full'>
-            <div class='person' (click)='selectUser(child.id)' [title]='child.firstname + " " + child.lastname' [id]="child.id">
-              <app-part-organization-chart-box [item]="child"></app-part-organization-chart-box>
-            </div>
+          <div class='w-full'>
+            <app-part-organization-chart-box [item]="child"></app-part-organization-chart-box>
           </div>
         </div>
       </div>
@@ -32,7 +30,7 @@
     <div class='people'> <!-- mit kindern (die geschwister ohne kinder haben) -->
       <div *ngFor='let child of peopleWithChildren' class='box'>
         <div class='relative'>
-          <div class='headPerson' (click)='selectUser(child.id)' [title]='child.firstname + " " + child.lastname' [id]="child.id">
+          <div class="headPerson">
             <app-part-organization-chart-box [item]="child"></app-part-organization-chart-box>
           </div>
           <div class='positionButtonBottom' (click)='toggleChildren(child.id)'>
@@ -49,12 +47,10 @@
 
 <ng-container *ngIf='peopleWithChildren.length === 0 && peopleNoChildren.length > 0'>
   <div class='peopleList'> <!-- ohne kinder (bei denen die eltern alle kinder haben) -->
-    <div> <!-- div is needed for css structure -->
+    <div class="peopleListInner">
       <div *ngFor='let child of peopleNoChildren' class='box'>
-        <div class='relative w-full'>
-          <div class='person' (click)='selectUser(child.id)' [title]='child.firstname + " " + child.lastname' [id]="child.id">
-            <app-part-organization-chart-box [item]="child"></app-part-organization-chart-box>
-          </div>
+        <div class='w-full'>
+          <app-part-organization-chart-box [item]="child"></app-part-organization-chart-box>
         </div>
       </div>
     </div>

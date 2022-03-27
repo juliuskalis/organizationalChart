@@ -1,9 +1,11 @@
-<div class="flex items-center gap-x-4">
-  <div class="flex justify-center items-center text-2xl bg-gray-100 rounded-full w-16 h-16">
-    {{item.firstAndLastLetter}}
-  </div>
-  <div>
-    <div>{{item.firstname}} {{item.lastname}}</div>
-    <div class="text-gray-400">{{item.title}}</div>
+<div class="box" (click)='selectUser(item.id)' [title]='item.firstname + " " + item.lastname' [id]="item.id">
+  <div class="flex items-center gap-x-4">
+    <div class="flex justify-center items-center text-2xl bg-gray-100 rounded-full w-16 h-16">
+      {{item.firstAndLastLetter}}
+    </div>
+    <div>
+      <div>{{item.firstname}} {{item.lastname}}</div>
+      <div class="text-gray-400">{{item.title}}</div>
+    </div>
   </div>
 </div>
