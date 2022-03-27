@@ -13,14 +13,14 @@ export class OrganizationChartChildComponent implements OnInit {
   @Input() clipped: string | undefined;
   @Input() selectedUser: string | undefined;
 
-  peopleNoChildren: any[] = [];
+  peopleWithoutChildren: any[] = [];
   peopleWithChildren: any[] = [];
 
   ngOnInit() {
     if(this.orga) {
       this.orga.forEach(o => { // for every element
         if (o.children?.length === undefined) { // when element has no children
-          this.peopleNoChildren.push(o);
+          this.peopleWithoutChildren.push(o);
         } else { // when element has children
           this.peopleWithChildren.push(o);
         }
@@ -33,10 +33,6 @@ export class OrganizationChartChildComponent implements OnInit {
     if(child) {
       child.displayChildren = !child.displayChildren;
     }
-  }
-
-  clipPerson(id: string | null) {
-    console.log('id', id);
   }
 
 }

@@ -1,5 +1,15 @@
-<ng-container *ngIf='peopleNoChildren.length === 0 && peopleWithChildren.length > 0'>
-  <div class='people'> <!-- mit kindern (die keine geschwister ohne kinder haben) -->
+<div [ngClass]="peopleWithoutChildren.length > 0 && peopleWithChildren.length > 0 ? 'flex' : ''">
+  <div class='peopleList' *ngIf="peopleWithoutChildren.length > 0">
+    <div class="peopleListInner">
+      <div *ngFor='let child of peopleWithoutChildren' class='box'>
+        <div class='w-full'>
+          <app-part-organization-chart-box [item]="child"></app-part-organization-chart-box>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='people' *ngIf="peopleWithChildren.length > 0">
     <div *ngFor='let child of peopleWithChildren' class='box'>
       <div class='relative'>
         <div class="headPerson">
@@ -14,45 +24,4 @@
       </ng-container>
     </div>
   </div>
-</ng-container>
-
-<ng-container *ngIf='peopleNoChildren.length > 0 && peopleWithChildren.length > 0 '>
-  <div class='flex'>
-    <div class='peopleList'> <!-- ohne kinder (bei denen die geschwister kinder haben) -->
-      <div class="peopleListInner">
-        <div *ngFor='let child of peopleNoChildren' class='box'>
-          <div class='w-full'>
-            <app-part-organization-chart-box [item]="child"></app-part-organization-chart-box>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class='people'> <!-- mit kindern (die geschwister ohne kinder haben) -->
-      <div *ngFor='let child of peopleWithChildren' class='box'>
-        <div class='relative'>
-          <div class="headPerson">
-            <app-part-organization-chart-box [item]="child"></app-part-organization-chart-box>
-          </div>
-          <div class='positionButtonBottom' (click)='toggleChildren(child.id)'>
-            <app-part-organization-chart-toggle-children-button-content [item]="child"></app-part-organization-chart-toggle-children-button-content>
-          </div>
-        </div>
-        <ng-container *ngIf='child.displayChildren'>
-          <app-part-organization-chart-child [orga]='child.children' [showName]='showName' [showTitle]="showTitle" [clipped]='clipped' [selectedUser]='selectedUser'></app-part-organization-chart-child>
-        </ng-container>
-      </div>
-    </div>
-  </div>
-</ng-container>
-
-<ng-container *ngIf='peopleWithChildren.length === 0 && peopleNoChildren.length > 0'>
-  <div class='peopleList'> <!-- ohne kinder (bei denen die eltern alle kinder haben) -->
-    <div class="peopleListInner">
-      <div *ngFor='let child of peopleNoChildren' class='box'>
-        <div class='w-full'>
-          <app-part-organization-chart-box [item]="child"></app-part-organization-chart-box>
-        </div>
-      </div>
-    </div>
-  </div>
-</ng-container>
+</div>
