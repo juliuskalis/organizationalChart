@@ -9,7 +9,6 @@ import { OrganizationChartChildComponent } from './parts/organization-chart-chil
 import { OrganizationChartSettingsComponent } from './parts/organization-chart-settings/organization-chart-settings.component';
 import { OrganizationChartToggleChildrenButtonContentComponent } from './parts/organization-chart-toggle-children-button-content/organization-chart-toggle-children-button-content.component';
 import { SwitchComponent } from './parts/switch/switch.component';
-import { StartComponent } from './sites/start/start.component';
 
 import {
   FontAwesomeModule,
@@ -25,6 +24,7 @@ import {
 import { DeviceCheckComponent } from './sites/device-check/device-check.component';
 import { SetBodyIdPipe } from './pipes/set-body-id.pipe';
 import { OrganizationChartSettingsOptionsComponent } from './parts/organization-chart-settings-options/organization-chart-settings-options.component';
+import { LayoutTestPageComponent } from './sites/layout-test-page/layout-test-page.component';
 
 @NgModule({
   declarations: [
@@ -35,10 +35,10 @@ import { OrganizationChartSettingsOptionsComponent } from './parts/organization-
     OrganizationChartSettingsComponent,
     OrganizationChartToggleChildrenButtonContentComponent,
     SwitchComponent,
-    StartComponent,
     DeviceCheckComponent,
     SetBodyIdPipe,
-    OrganizationChartSettingsOptionsComponent
+    OrganizationChartSettingsOptionsComponent,
+    LayoutTestPageComponent
   ],
   imports: [
     BrowserModule,
