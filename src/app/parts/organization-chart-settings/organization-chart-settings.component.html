@@ -1,9 +1,9 @@
 <div class="fixed z-30" [ngClass]="layoutType === 'pc' ? 'top-12 left-12' : 'bottom-4 left-4'">
-  <div class="rounded-xl overflow-hidden backdrop-blur" [ngClass]="layoutType === 'pc' ? 'customResponsiveWidthForPC' : 'customWidthForPhone'">
+  <div class="overflow-hidden rounded-xl backdrop-blur" [ngClass]="layoutType === 'pc' ? 'customResponsiveWidthForPC' : 'customWidthForPhone'">
 
-    <app-part-organization-chart-settings-options *ngIf="layoutType === 'phone'" [data]="data" [displayMenu]="displayMenu"></app-part-organization-chart-settings-options>
+    <app-part-organization-chart-settings-options *ngIf="layoutType === 'phone'" [displayMenu]="displayMenu"></app-part-organization-chart-settings-options>
 
-    <div class="h-24 flex duration-300 z-10" [ngClass]="displayMenu ? 'bg-gray-50/80' : 'bg-white/80'">
+    <div class="h-24 flex duration-300" [ngClass]="displayMenu ? 'bg-gray-50/80' : 'bg-white/80'">
       <div class="hidden">Button</div>
       <div class="flex justify-between items-center w-full px-8">
         <div class="text-xl">Settings</div>
@@ -17,7 +17,7 @@
       </div>
     </div>
 
-    <app-part-organization-chart-settings-options *ngIf="layoutType === 'pc'" [data]="data" [displayMenu]="displayMenu"></app-part-organization-chart-settings-options>
+    <app-part-organization-chart-settings-options *ngIf="layoutType === 'pc'" [displayMenu]="displayMenu" [layoutType]="layoutType"></app-part-organization-chart-settings-options>
 
   </div>
 </div>

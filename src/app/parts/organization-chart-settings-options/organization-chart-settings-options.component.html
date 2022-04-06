@@ -1,7 +1,15 @@
-<div class="bg-white/80 duration-300 overflow-hidden" [ngStyle]="{'height': displayMenu ? '111px' : '0'}">
+<div class="bg-white/80 duration-300" [ngStyle]="{'height': displayMenu ? height + 'px' : '0', 'overflow': layoutType === 'pc' ? 'overlay' : 'auto'}" (window:resize)="onResize($event)">
+
+
+
+<!-- die scrollBox nehmen und abgleichen ob die scrollBox oder die innerHeight größer ist -->
+
+
+
+
   <!--      overflow-auto overlay-->
   <!--      calc(100vh - 12rem)-->
-  <div class="p-8 flex flex-col gap-y-4">
+  <div id="oChartSettingsScrollBox" class="p-8 flex flex-col gap-y-4">
 
     <!--        <div>-->
     <!--          <div class="text-green-700 uppercase text-sm mb-4">Suche</div>-->
@@ -24,9 +32,10 @@
         <div class="flex items-center">
           <!--              <i class="fal fa-search text-xl mr-2"></i>-->
           <img src="../../../assets/icons/suche.svg" alt="Search Icon" class="opacity-80 w-6 mr-2">
-          <div (click)="resetScaleMultiplier()" class="py-2 px-3 rounded-full"
-               [ngClass]="scaleMultiplier === 100 ? 'cursor-default' : 'cursor-pointer bg-gray-200 hover:bg-gray-300 duration-100'"
-               [title]="scaleMultiplier === 100 ? '' : 'Zurück setzen'">{{scaleMultiplier}}%
+          <div (click)="resetScaleMultiplier()" class="py-2 px-3 rounded-full duration-100"
+               [ngClass]="scaleMultiplier === 100 ? 'cursor-default' : 'cursor-pointer bg-gray-200 hover:bg-gray-300'"
+               [title]="scaleMultiplier === 100 ? '' : 'Zurück setzen'">
+            {{scaleMultiplier}}%
           </div>
         </div>
         <div class="flex gap-x-2">
@@ -48,34 +57,18 @@
       </div>
     </div>
 
-    <!--        <div class="solidLine"></div>-->
+    <div class="p-16">test</div>
+    <!--<div class="p-16">test</div>
+    <div class="p-16">test</div>
+    <div class="p-16">test</div>
+    <div class="p-16">test</div>
+    <div class="p-16">test</div>
+    <div class="p-16">test</div>
+    <div class="p-16">test</div>
+    <div class="p-16">test</div>
+    <div class="p-16">test</div>
+    <div class="p-16">test</div>-->
 
-    <div *ngIf="clipped !== 'null'">
-      <div class="text-green-700 uppercase text-sm">Angepinnt</div>
-      <div class="mt-4 w-full">
-        <div class="flex items-center justify-between gap-x-1">
-          <div class="flex items-center gap-x-4">
-            <div>
-              <div *ngIf="currentPinnedUser?.hasImage" class='imgBox'><img src='{{currentPinnedUser?.imageUrl}}'
-                                                                           alt=''></div>
-              <div *ngIf="!currentPinnedUser?.hasImage"
-                   class='bg-gray-100 w-16 h-16 rounded-full flex justify-center items-center text-2xl text-gray-600 font-medium uppercase'>{{currentPinnedUser?.firstAndLastLetter}}</div>
-            </div>
-            <div class="lineClamp">{{currentPinnedUser?.firstname}} {{currentPinnedUser?.lastname}}</div>
-          </div>
-          <div class="flex">
-            <div class="w-8 h-8 rounded-xl flex justify-center items-center hover:bg-gray-100 cursor-pointer"
-                 (click)="copyTextToClipboard(currentPinnedUser?.id)" title="Teilen">
-              <i class="fad fa-share"></i>
-            </div>
-            <div class="w-8 h-8 rounded-xl flex justify-center items-center hover:bg-gray-100 cursor-pointer"
-                 (click)="removePinnedUser()" title="Nicht mehr anpinnen">
-              <i class="fal fa-times text-lg"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
   </div>
 </div>

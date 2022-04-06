@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {BehaviorSubject} from "rxjs";
+import {BehaviorSubject, Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +11,13 @@ export class OrganizationChartService {
   userToScroll: BehaviorSubject<string | null> = new BehaviorSubject<string | null>('');
   scaleMultiplier: BehaviorSubject<number> = new BehaviorSubject<number>(100);
   startFrom: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+
+  constructor() {
+    const scaleMultiplier = localStorage.getItem('scaleMultiplier');
+    if (scaleMultiplier) {
+      this.scaleMultiplier.next(JSON.parse(scaleMultiplier));
+    }
+  }
 
   setSelectedUserId(id: string | null) {
     console.log(id);
@@ -28,6 +35,11 @@ export class OrganizationChartService {
 
   setScaleMultiplier(val: number) {
     this.scaleMultiplier.next(val);
+    localStorage.setItem('scaleMultiplier', JSON.stringify(val));
+  }
+
+  getScaleMultiplier(): Observable<number> {
+    return this.scaleMultiplier;
   }
 
   setStartFrom(val: boolean) {

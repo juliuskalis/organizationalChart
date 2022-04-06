@@ -1,160 +1,71 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {OrganizationChartService} from "../../services/organization-chart.service";
+import {Subject, takeUntil} from "rxjs";
 
 @Component({
   selector: 'app-part-organization-chart-settings-options',
   templateUrl: './organization-chart-settings-options.component.html',
   styleUrls: ['./organization-chart-settings-options.component.scss']
 })
-export class OrganizationChartSettingsOptionsComponent implements OnInit {
+export class OrganizationChartSettingsOptionsComponent implements OnDestroy, OnInit {
 
-  @Input() data: any[] = [];
   @Input() displayMenu: boolean = true;
+  @Input() layoutType: string = 'pc';
+  height: number = 500;
 
-  clipped: string = 'null';
-  selectedUserId: string | undefined;
   scaleMultiplier: number = 100;
 
-  displayChildren: boolean = true;
-  displayName: boolean = true;
-  displayTitle: boolean = false;
-
-  currentPinnedUser: any | undefined;
-  switchValues: any[] = [
-    {
-      id: 'name',
-      text: 'Name anzeigen',
-      value: true
-    },
-    {
-      id: 'title',
-      text: 'Titel anzeigen',
-      value: true
-    },
-    {
-      id: 'children',
-      text: 'Kinder anzeigen',
-      value: true
-    }
-  ];
+  destroy: Subject<boolean> = new Subject<boolean>();
 
   constructor(private organizationChartService: OrganizationChartService) {
-    this.checkLocalStorage();
+    this.initializeSubscriptions();
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.calcHeight(window.innerHeight);
   }
 
-  checkLocalStorage() {
-    const a = localStorage.getItem('displayName');
-    if (a) {
-      this.displayName = JSON.parse(a);
-    }
-    const b = localStorage.getItem('displayTitle');
-    if (b) {
-      this.displayTitle = JSON.parse(b);
-    }
-    const c = localStorage.getItem('displayChildren');
-    if (c) {
-      this.displayChildren = JSON.parse(c);
-    }
-    const d = localStorage.getItem('scaleMultiplier');
-    if (d) {
-      this.scaleMultiplier = JSON.parse(d);
-      this.organizationChartService.setScaleMultiplier(this.scaleMultiplier);
-    }
+  initializeSubscriptions() {
+    this.organizationChartService.scaleMultiplier.pipe(takeUntil(this.destroy)).subscribe((value: number) => {
+      this.scaleMultiplier = value;
+    });
   }
 
   resetScaleMultiplier() {
-    this.scaleMultiplier = 100;
-    this.organizationChartService.setScaleMultiplier(this.scaleMultiplier);
-    localStorage.setItem('scaleMultiplier', JSON.stringify(this.scaleMultiplier));
+    this.organizationChartService.setScaleMultiplier(100);
   }
 
   setScaleMultiplier(val: boolean) {
     if (val && this.scaleMultiplier < 200) {
-      this.scaleMultiplier += 10;
-      this.organizationChartService.setScaleMultiplier(this.scaleMultiplier);
-      localStorage.setItem('scaleMultiplier', JSON.stringify(this.scaleMultiplier));
+      this.organizationChartService.setScaleMultiplier(this.scaleMultiplier += 10);
     } else if (!val && this.scaleMultiplier > 10) {
-      this.scaleMultiplier -= 10;
-      this.organizationChartService.setScaleMultiplier(this.scaleMultiplier);
-      localStorage.setItem('scaleMultiplier', JSON.stringify(this.scaleMultiplier));
+      this.organizationChartService.setScaleMultiplier(this.scaleMultiplier -= 10);
     }
   }
 
-  removePinnedUser() {
-    if (this.clipped !== 'null') {
-      this.organizationChartService.pinUserId('null');
+  onResize(e: any) {
+    this.calcHeight(e.target.innerHeight);
+  }
+
+  calcHeight(val: number) {
+    const x = document.getElementById('oChartSettingsScrollBox')?.getClientRects()[0];
+    console.log(x);
+    if (this.layoutType === 'pc') {
+      this.height = val - ((36 * 2) + 72);
+      if (x && x.height < val) {
+        this.height = x.height;
+      }
+    } else {
+      this.height = val - ((12 * 2) + 72);
+      if (x && x.height < val) {
+        this.height = x.height;
+      }
     }
   }
 
-  getUserObject(): void {
-    if (this.clipped !== null && this.clipped !== 'null') {
-      this.currentPinnedUser = this.data.find(x => x.id === this.clipped);
-    }
-  }
-
-  copyTextToClipboard(id: string | undefined | null) {
-    if (id === undefined || id === null) {
-      return;
-    }
-    const textArea = document.createElement('textarea');
-
-    //
-    // *** This styling is an extra step which is likely not required. ***
-    //
-    // Why is it here? To ensure:
-    // 1. the element is able to have focus and selection.
-    // 2. if the element was to flash render it has minimal visual impact.
-    // 3. less flakyness with selection and copying which **might** occur if
-    //    the textarea element is not visible.
-    //
-    // The likelihood is the element won't even render, not even a
-    // flash, so some of these are just precautions. However in
-    // Internet Explorer the element is visible whilst the popup
-    // box asking the user for permission for the web page to
-    // copy to the clipboard.
-    //
-
-    // Place in the top-left corner of screen regardless of scroll position.
-    textArea.style.position = 'fixed';
-    textArea.style.top = '0';
-    textArea.style.left = '0';
-
-    // Ensure it has a small width and height. Setting to 1px / 1em
-    // doesn't work as this gives a negative w/h on some browsers.
-    textArea.style.width = '2em';
-    textArea.style.height = '2em';
-
-    // We don't need padding, reducing the size if it does flash render.
-    textArea.style.padding = '0';
-
-    // Clean up any borders.
-    textArea.style.border = 'none';
-    textArea.style.outline = 'none';
-    textArea.style.boxShadow = 'none';
-
-    // Avoid flash of the white box if rendered for any reason.
-    textArea.style.background = 'transparent';
-
-
-    const url = window.location;
-    textArea.value = url.origin + url.pathname + '#' + id;
-
-    document.body.appendChild(textArea);
-    textArea.focus();
-    textArea.select();
-
-    try {
-      const successful = document.execCommand('copy');
-      const msg = successful ? 'successful' : 'unsuccessful';
-      console.log('Copying text command was ' + msg + ' URL: ' + textArea.value);
-    } catch (err) {
-      console.log('Oops, unable to copy');
-    }
-
-    document.body.removeChild(textArea);
+  ngOnDestroy(): void {
+    this.destroy.next(true);
+    this.destroy.complete();
   }
 
 }
