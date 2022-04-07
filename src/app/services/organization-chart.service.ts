@@ -11,11 +11,20 @@ export class OrganizationChartService {
   userToScroll: BehaviorSubject<string | null> = new BehaviorSubject<string | null>('');
   scaleMultiplier: BehaviorSubject<number> = new BehaviorSubject<number>(100);
   startFrom: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  scrollOnPC: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor() {
+    this.checkLocalStorage();
+  }
+
+  checkLocalStorage() {
     const scaleMultiplier = localStorage.getItem('scaleMultiplier');
     if (scaleMultiplier) {
       this.scaleMultiplier.next(JSON.parse(scaleMultiplier));
+    }
+    const scrollOnPC = localStorage.getItem('scrollOnPC');
+    if (scrollOnPC) {
+      this.scrollOnPC.next(JSON.parse(scrollOnPC));
     }
   }
 
@@ -44,6 +53,11 @@ export class OrganizationChartService {
 
   setStartFrom(val: boolean) {
     this.startFrom.next(val);
+  }
+
+  setScrollOnPC(val: boolean) {
+    this.scrollOnPC.next(val);
+    localStorage.setItem('scrollOnPC', JSON.stringify(val));
   }
 
 }

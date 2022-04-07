@@ -1,6 +1,17 @@
 <div [ngClass]="peopleWithoutChildren.length > 0 && peopleWithChildren.length > 0 ? 'flex' : ''">
   <div class='peopleList' *ngIf="peopleWithoutChildren.length > 0">
-    <div [ngClass]="peopleWithoutChildren.length === 1 ? 'beforeElement' : 'flex flex-col gap-y-4 p-4 border border-gray-400'"> <!-- creates a css list if length is over 1 -->
+    <div
+      [ngClass]="{
+      'beforeElement': peopleWithoutChildren.length === 1,
+      'grid gap-4 p-4 border border-gray-400': peopleWithoutChildren.length > 1,
+      'cGridColumns2': peopleWithoutChildren.length >= 6 && peopleWithoutChildren.length < 12,
+      'cGridColumns3': peopleWithoutChildren.length >= 12 && peopleWithoutChildren.length < 24,
+      'cGridColumns4': peopleWithoutChildren.length >= 24 && peopleWithoutChildren.length < 48,
+      'cGridColumns5': peopleWithoutChildren.length >= 48 && peopleWithoutChildren.length < 96,
+      'cGridColumns6': peopleWithoutChildren.length >= 96 && peopleWithoutChildren.length < 192,
+      'cGridColumns7': peopleWithoutChildren.length >= 192 && peopleWithoutChildren.length < 384
+      }">
+      <!-- creates a css list if length is over 1 -->
       <div *ngFor='let child of peopleWithoutChildren' class='w-full'>
         <app-part-organization-chart-box [item]="child"></app-part-organization-chart-box>
       </div>
@@ -14,11 +25,14 @@
           <app-part-organization-chart-box [item]="child"></app-part-organization-chart-box>
         </div>
         <div class='absolute left-1/2 bottom-[-0.75rem] z-10 translate-x-[-50%]' (click)='toggleChildren(child.id)'>
-          <app-part-organization-chart-toggle-children-button-content [item]="child"></app-part-organization-chart-toggle-children-button-content>
+          <app-part-organization-chart-toggle-children-button-content
+            [item]="child"></app-part-organization-chart-toggle-children-button-content>
         </div>
       </div>
       <ng-container *ngIf='child.displayChildren'>
-        <app-part-organization-chart-child [orga]='child.children' [showName]='showName' [showTitle]="showTitle" [clipped]='clipped' [selectedUser]='selectedUser'></app-part-organization-chart-child>
+        <app-part-organization-chart-child [orga]='child.children' [showName]='showName' [showTitle]="showTitle"
+                                           [clipped]='clipped'
+                                           [selectedUser]='selectedUser'></app-part-organization-chart-child>
       </ng-container>
     </div>
   </div>

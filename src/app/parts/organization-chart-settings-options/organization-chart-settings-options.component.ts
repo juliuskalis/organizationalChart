@@ -1,4 +1,4 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy} from '@angular/core';
 import {OrganizationChartService} from "../../services/organization-chart.service";
 import {Subject, takeUntil} from "rxjs";
 
@@ -7,13 +7,14 @@ import {Subject, takeUntil} from "rxjs";
   templateUrl: './organization-chart-settings-options.component.html',
   styleUrls: ['./organization-chart-settings-options.component.scss']
 })
-export class OrganizationChartSettingsOptionsComponent implements OnDestroy, OnInit {
+export class OrganizationChartSettingsOptionsComponent implements OnDestroy {
 
   @Input() displayMenu: boolean = true;
   @Input() layoutType: string = 'pc';
   height: number = 500;
 
   scaleMultiplier: number = 100;
+  scrollOnPC: boolean = false;
 
   destroy: Subject<boolean> = new Subject<boolean>();
 
@@ -26,8 +27,12 @@ export class OrganizationChartSettingsOptionsComponent implements OnDestroy, OnI
   }
 
   initializeSubscriptions() {
+    this.calcHeight(window.innerHeight);
     this.organizationChartService.scaleMultiplier.pipe(takeUntil(this.destroy)).subscribe((value: number) => {
       this.scaleMultiplier = value;
+    });
+    this.organizationChartService.scrollOnPC.pipe(takeUntil(this.destroy)).subscribe((val: boolean) => {
+      this.scrollOnPC = val;
     });
   }
 
@@ -69,6 +74,13 @@ export class OrganizationChartSettingsOptionsComponent implements OnDestroy, OnI
       } else {
         o.style.overflow = this.layoutType === 'pc' ? 'overlay' : 'auto';
       }
+    }
+  }
+
+  toggleScrollOnPC() {
+    if (this.layoutType === 'pc') {
+      this.scrollOnPC = !this.scrollOnPC;
+      this.organizationChartService.setScrollOnPC(this.scrollOnPC);
     }
   }
 

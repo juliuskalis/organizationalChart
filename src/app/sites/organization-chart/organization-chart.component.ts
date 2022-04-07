@@ -4,6 +4,8 @@ import {OrganizationChartService} from "../../services/organization-chart.servic
 import JSONdata from '../../apiData/data.json';
 import {Subject, takeUntil} from "rxjs";
 import {Router} from "@angular/router";
+// @ts-ignore
+import ScrollBooster from 'scrollbooster';
 
 @Component({
   selector: 'app-organization-chart',
@@ -29,7 +31,8 @@ export class OrganizationChartComponent implements OnInit {
   startFrom: boolean = false;
 
   layoutType: string = 'pc';
-
+  scrollOnPC: boolean = false;
+  
   destroy: Subject<boolean> = new Subject<boolean>();
 
   constructor(private router: Router, private organizationChartService: OrganizationChartService) {
@@ -49,6 +52,20 @@ export class OrganizationChartComponent implements OnInit {
     this.checkForHash();
     this.getFirstAndLastLetter();
     this.start();
+    this.checkForScrollOnPC();
+  }
+
+  checkForScrollOnPC() {
+    new ScrollBooster({
+      viewport: document.querySelector('#scrollContainer'),
+      scrollMode: 'native',
+      direction: 'transform',
+      emulateScroll: false, // scroll on wheel events
+    });
+
+    this.organizationChartService.scrollOnPC.pipe(takeUntil(this.destroy)).subscribe((val: boolean) => {
+      this.scrollOnPC = val;
+    });
   }
 
   checkForHash() {

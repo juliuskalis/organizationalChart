@@ -114,3 +114,22 @@ $space: 2rem;
   background-color: $lineColor;
   pointer-events: none;
 }
+
+.cGridColumns2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.cGridColumns3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.cGridColumns4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+.cGridColumns5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+.cGridColumns6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+.cGridColumns7 {
+  grid-template-columns: repeat(7, 1fr);
+}

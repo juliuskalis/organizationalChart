@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+// @ts-ignore
+import ScrollBooster from 'scrollbooster';
 
 @Component({
   selector: 'app-layout-test-page',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutTestPageComponent implements OnInit {
 
+  display: boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }
