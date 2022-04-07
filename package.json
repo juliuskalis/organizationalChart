@@ -22,7 +22,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "rxjs": "~7.5.0",
-    "scrollbooster": "^3.0.2",
+    "scrollbooster": "3.0.2",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
