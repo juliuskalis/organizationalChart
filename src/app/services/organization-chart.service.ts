@@ -29,7 +29,6 @@ export class OrganizationChartService {
   }
 
   setSelectedUserId(id: string | null) {
-    console.log(id);
     this.selectedUserId.next(id);
   }
 

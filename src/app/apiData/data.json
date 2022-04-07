@@ -6,7 +6,10 @@
     "firstAndLastLetter": "Nathan Salt",
     "parentId": "0",
     "firstname": "Nathan",
-    "lastname": "Salt"
+    "lastname": "Salt",
+    "department": "Group 1",
+    "mail": "n.salt@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "2",
@@ -15,7 +18,10 @@
     "firstAndLastLetter": "Bart Redfern",
     "parentId": "1",
     "firstname": "Bart",
-    "lastname": "Redfern"
+    "lastname": "Redfern",
+    "department": "Group 1",
+    "mail": "b.redfern@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "3",
@@ -24,7 +30,10 @@
     "firstAndLastLetter": "Valentina Latham",
     "parentId": "1",
     "firstname": "Valentina",
-    "lastname": "Latham"
+    "lastname": "Latham",
+    "department": "Group 1",
+    "mail": "v.latham@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "4",
@@ -33,7 +42,10 @@
     "firstAndLastLetter": "Bernadette Wooldridge",
     "parentId": "1",
     "firstname": "Bernadette",
-    "lastname": "Wooldridge"
+    "lastname": "Wooldridge",
+    "department": "Group 1",
+    "mail": "b.wooldridge@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "5",
@@ -42,7 +54,10 @@
     "firstAndLastLetter": "Jacob Edley",
     "parentId": "2",
     "firstname": "Jacob",
-    "lastname": "Edley"
+    "lastname": "Edley",
+    "department": "Group 1",
+    "mail": "j.edley@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "6",
@@ -51,7 +66,10 @@
     "firstAndLastLetter": "Lauren Hood",
     "parentId": "2",
     "firstname": "Lauren",
-    "lastname": "Hood"
+    "lastname": "Hood",
+    "department": "Group 1",
+    "mail": "l.hood@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "7",
@@ -60,7 +78,10 @@
     "firstAndLastLetter": "Oliver Brooks",
     "parentId": "2",
     "firstname": "Oliver",
-    "lastname": "Brooks"
+    "lastname": "Brooks",
+    "department": "Group 1",
+    "mail": "o.brooks@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "8",
@@ -69,7 +90,10 @@
     "firstAndLastLetter": "Vicky Simpson",
     "parentId": "2",
     "firstname": "Vicky",
-    "lastname": "Simpson"
+    "lastname": "Simpson",
+    "department": "Group 1",
+    "mail": "v.simpson@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "9",
@@ -78,7 +102,10 @@
     "firstAndLastLetter": "Owen Redfern",
     "parentId": "3",
     "firstname": "Owen",
-    "lastname": "Redfern"
+    "lastname": "Redfern",
+    "department": "Group 1",
+    "mail": "o.redfern@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "10",
@@ -87,7 +114,10 @@
     "firstAndLastLetter": "Colleen Latham",
     "parentId": "3",
     "firstname": "Colleen",
-    "lastname": "Latham"
+    "lastname": "Latham",
+    "department": "Group 2",
+    "mail": "c.latham@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "11",
@@ -96,7 +126,10 @@
     "firstAndLastLetter": "Danny Middleton",
     "parentId": "4",
     "firstname": "Danny",
-    "lastname": "Middleton"
+    "lastname": "Middleton",
+    "department": "Group 2",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "12",
@@ -105,7 +138,10 @@
     "firstAndLastLetter": "Isabel Stone ",
     "parentId": "4",
     "firstname": "Isabel",
-    "lastname": "Stone"
+    "lastname": "Stone",
+    "department": "Group 2",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "13",
@@ -114,7 +150,10 @@
     "firstAndLastLetter": "Monica Patel",
     "parentId": "5",
     "firstname": "Monica",
-    "lastname": "Patel"
+    "lastname": "Patel",
+    "department": "Group 2",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "14",
@@ -123,7 +162,10 @@
     "firstAndLastLetter": "Chuck Brown",
     "parentId": "5",
     "firstname": "Chuck",
-    "lastname": "Brown"
+    "lastname": "Brown",
+    "department": "Group 2",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "15",
@@ -132,7 +174,10 @@
     "firstAndLastLetter": "Leilani Stewart",
     "parentId": "5",
     "firstname": "Leilani",
-    "lastname": "Stewart"
+    "lastname": "Stewart",
+    "department": "Group 2",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "16",
@@ -141,7 +186,10 @@
     "firstAndLastLetter": "Daniel Hill",
     "parentId": "6",
     "firstname": "Daniel",
-    "lastname": "Hill"
+    "lastname": "Hill",
+    "department": "Group 2",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "17",
@@ -150,7 +198,10 @@
     "firstAndLastLetter": "Skylar Coates",
     "parentId": "6",
     "firstname": "Skylar",
-    "lastname": "Coates"
+    "lastname": "Coates",
+    "department": "Group 2",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "18",
@@ -159,7 +210,10 @@
     "firstAndLastLetter": "Oliver Craig",
     "parentId": "6",
     "firstname": "Oliver",
-    "lastname": "Craig"
+    "lastname": "Craig",
+    "department": "Group 2",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "19",
@@ -168,7 +222,10 @@
     "firstAndLastLetter": "Enoch Sherry",
     "parentId": "6",
     "firstname": "Enoch",
-    "lastname": "Sherry"
+    "lastname": "Sherry",
+    "department": "Group 2",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "20",
@@ -177,7 +234,10 @@
     "firstAndLastLetter": "Eileen Graves",
     "parentId": "7",
     "firstname": "Eileen",
-    "lastname": "Graves"
+    "lastname": "Graves",
+    "department": "Group 3",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "21",
@@ -186,7 +246,10 @@
     "firstAndLastLetter": "Dorothy Riley",
     "parentId": "7",
     "firstname": "Dorothy",
-    "lastname": "Riley"
+    "lastname": "Riley",
+    "department": "Group 3",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "22",
@@ -195,7 +258,10 @@
     "firstAndLastLetter": "Daron Edwards",
     "parentId": "8",
     "firstname": "Daron",
-    "lastname": "Edwards"
+    "lastname": "Edwards",
+    "department": "Group 3",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "23",
@@ -204,7 +270,10 @@
     "firstAndLastLetter": "Bart Uttridge",
     "parentId": "8",
     "firstname": "Bart",
-    "lastname": "Uttridge"
+    "lastname": "Uttridge",
+    "department": "Group 3",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "24",
@@ -213,7 +282,10 @@
     "firstAndLastLetter": "Sonya Noon",
     "parentId": "7",
     "firstname": "Sonya",
-    "lastname": "Noon"
+    "lastname": "Noon",
+    "department": "Group 3",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "25",
@@ -222,7 +294,10 @@
     "firstAndLastLetter": "Barney Warren",
     "parentId": "7",
     "firstname": "Barney",
-    "lastname": "Warren"
+    "lastname": "Warren",
+    "department": "Group 3",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "26",
@@ -231,7 +306,10 @@
     "firstAndLastLetter": "Ember Callan",
     "parentId": "7",
     "firstname": "Ember",
-    "lastname": "Callan"
+    "lastname": "Callan",
+    "department": "Group 3",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "27",
@@ -240,7 +318,10 @@
     "firstAndLastLetter": "Elijah Lloyd",
     "parentId": "7",
     "firstname": "Elijah",
-    "lastname": "Lloyd"
+    "lastname": "Lloyd",
+    "department": "Group 3",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "28",
@@ -249,7 +330,10 @@
     "firstAndLastLetter": "Freya Warden",
     "parentId": "24",
     "firstname": "Freya",
-    "lastname": "Warden"
+    "lastname": "Warden",
+    "department": "Group 3",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "29",
@@ -258,7 +342,10 @@
     "firstAndLastLetter": "Amy Stone",
     "parentId": "24",
     "firstname": "Amy",
-    "lastname": "Stone"
+    "lastname": "Stone",
+    "department": "Group 3",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "30",
@@ -267,7 +354,10 @@
     "firstAndLastLetter": "Isabella Vallory",
     "parentId": "24",
     "firstname": "Isabella",
-    "lastname": "Vallory"
+    "lastname": "Vallory",
+    "department": "Group 4",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "31",
@@ -276,7 +366,10 @@
     "firstAndLastLetter": "Rose Wigley",
     "parentId": "28",
     "firstname": "Rose",
-    "lastname": "Wigley"
+    "lastname": "Wigley",
+    "department": "Group 4",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "32",
@@ -285,7 +378,10 @@
     "firstAndLastLetter": "Lucas Kirby",
     "parentId": "28",
     "firstname": "Lucas",
-    "lastname": "Kirby"
+    "lastname": "Kirby",
+    "department": "Group 4",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "33",
@@ -294,7 +390,10 @@
     "firstAndLastLetter": "Hank Nash",
     "parentId": "28",
     "firstname": "Hank",
-    "lastname": "Nash"
+    "lastname": "Nash",
+    "department": "Group 4",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "34",
@@ -303,7 +402,10 @@
     "firstAndLastLetter": "Ronald Varley",
     "parentId": "29",
     "firstname": "Ronald",
-    "lastname": "Varley"
+    "lastname": "Varley",
+    "department": "Group 4",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "35",
@@ -312,7 +414,10 @@
     "firstAndLastLetter": "Stacy Jeffery",
     "parentId": "29",
     "firstname": "Stacy",
-    "lastname": "Jeffery"
+    "lastname": "Jeffery",
+    "department": "Group 4",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "36",
@@ -321,7 +426,10 @@
     "firstAndLastLetter": "Hayden Collins",
     "parentId": "29",
     "firstname": "Hayden",
-    "lastname": "Collins"
+    "lastname": "Collins",
+    "department": "Group 4",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "37",
@@ -330,7 +438,10 @@
     "firstAndLastLetter": "Jack Lynn",
     "parentId": "29",
     "firstname": "Jack",
-    "lastname": "Lynn"
+    "lastname": "Lynn",
+    "department": "Group 4",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "38",
@@ -339,7 +450,10 @@
     "firstAndLastLetter": "Barry Randall",
     "parentId": "30",
     "firstname": "Barry",
-    "lastname": "Randall"
+    "lastname": "Randall",
+    "department": "Group 4",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "39",
@@ -348,7 +462,10 @@
     "firstAndLastLetter": "Lorraine Drew",
     "parentId": "30",
     "firstname": "Lorraine",
-    "lastname": "Drew"
+    "lastname": "Drew",
+    "department": "Group 4",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "40",
@@ -357,7 +474,10 @@
     "firstAndLastLetter": "Carina Wilson",
     "parentId": "30",
     "firstname": "Carina",
-    "lastname": "Wilson"
+    "lastname": "Wilson",
+    "department": "Group 5",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "41",
@@ -366,7 +486,10 @@
     "firstAndLastLetter": "Chadwick Rosenbloom",
     "parentId": "2",
     "firstname": "Chadwick",
-    "lastname": "Rosenbloom"
+    "lastname": "Rosenbloom",
+    "department": "Group 5",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "42",
@@ -375,7 +498,10 @@
     "firstAndLastLetter": "Chester Ross",
     "parentId": "24",
     "firstname": "Chester",
-    "lastname": "Ross"
+    "lastname": "Ross",
+    "department": "Group 5",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "43",
@@ -384,7 +510,10 @@
     "firstAndLastLetter": "Tyson Saunders",
     "parentId": "17",
     "firstname": "Tyson",
-    "lastname": "Saunders"
+    "lastname": "Saunders",
+    "department": "Group 5",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "44",
@@ -393,7 +522,10 @@
     "firstAndLastLetter": "Tess Maxwell",
     "parentId": "17",
     "firstname": "Tess",
-    "lastname": "Maxwell"
+    "lastname": "Maxwell",
+    "department": "Group 5",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "45",
@@ -402,7 +534,10 @@
     "firstAndLastLetter": "Leslie Smith",
     "parentId": "18",
     "firstname": "Leslie",
-    "lastname": "Smith"
+    "lastname": "Smith",
+    "department": "Group 5",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "46",
@@ -411,7 +546,10 @@
     "firstAndLastLetter": "Abdul Notman",
     "parentId": "7",
     "firstname": "Abdul",
-    "lastname": "Notman"
+    "lastname": "Notman",
+    "department": "Group 5",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "47",
@@ -420,7 +558,10 @@
     "firstAndLastLetter": "Liam Nicholls",
     "parentId": "7",
     "firstname": "Liam",
-    "lastname": "Nicholls"
+    "lastname": "Nicholls",
+    "department": "Group 5",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "48",
@@ -429,7 +570,10 @@
     "firstAndLastLetter": "Teagan Upsdell",
     "parentId": "7",
     "firstname": "Teagan",
-    "lastname": "Upsdell"
+    "lastname": "Upsdell",
+    "department": "Group 5",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "49",
@@ -438,7 +582,10 @@
     "firstAndLastLetter": "Ciara Atkinson",
     "parentId": "7",
     "firstname": "Ciara",
-    "lastname": "Atkinson"
+    "lastname": "Atkinson",
+    "department": "Group 5",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "50",
@@ -447,7 +594,10 @@
     "firstAndLastLetter": "Cassandra Watson",
     "parentId": "7",
     "firstname": "Cassandra",
-    "lastname": "Watson"
+    "lastname": "Watson",
+    "department": "Group 6",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "51",
@@ -456,7 +606,10 @@
     "firstAndLastLetter": "Carina Tobin",
     "parentId": "7",
     "firstname": "Carina",
-    "lastname": "Tobin"
+    "lastname": "Tobin",
+    "department": "Group 6",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "52",
@@ -465,7 +618,10 @@
     "firstAndLastLetter": "Louise Michael",
     "parentId": "7",
     "firstname": "Louise",
-    "lastname": "Michael"
+    "lastname": "Michael",
+    "department": "Group 6",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "53",
@@ -474,7 +630,10 @@
     "firstAndLastLetter": "Maya Pearson",
     "parentId": "7",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 6",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "54",
@@ -483,7 +642,10 @@
     "firstAndLastLetter": "Parker Cox",
     "parentId": "7",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 6",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "55",
@@ -492,7 +654,10 @@
     "firstAndLastLetter": "Carmella Addley",
     "parentId": "7",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 6",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "56",
@@ -501,7 +666,10 @@
     "firstAndLastLetter": "Alma Randall",
     "parentId": "7",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 6",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "57",
@@ -510,7 +678,10 @@
     "firstAndLastLetter": "Darlene Jefferson",
     "parentId": "29",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 6",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "58",
@@ -519,7 +690,10 @@
     "firstAndLastLetter": "Nick Hamilton",
     "parentId": "29",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 6",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "59",
@@ -528,7 +702,10 @@
     "firstAndLastLetter": "Liliana Welsch",
     "parentId": "4",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 6",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "60",
@@ -537,7 +714,10 @@
     "firstAndLastLetter": "Adalind Varley",
     "parentId": "4",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 7",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "61",
@@ -546,7 +726,10 @@
     "firstAndLastLetter": "Benjamin Dowson",
     "parentId": "4",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 7",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "62",
@@ -555,7 +738,10 @@
     "firstAndLastLetter": "Emmanuelle Abbey",
     "parentId": "4",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 7",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "63",
@@ -564,7 +750,10 @@
     "firstAndLastLetter": "Liam Mullins",
     "parentId": "4",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 7",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "64",
@@ -573,7 +762,10 @@
     "firstAndLastLetter": "Hadley Whitehouse",
     "parentId": "4",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 7",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "65",
@@ -582,7 +774,10 @@
     "firstAndLastLetter": "Barry Mcgee",
     "parentId": "4",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 7",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "66",
@@ -591,7 +786,10 @@
     "firstAndLastLetter": "Alan Hall",
     "parentId": "4",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 7",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "67",
@@ -600,7 +798,10 @@
     "firstAndLastLetter": "Bob Moore",
     "parentId": "4",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 7",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "68",
@@ -609,7 +810,10 @@
     "firstAndLastLetter": "Bryon Lindop",
     "parentId": "4",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 7",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "69",
@@ -618,7 +822,10 @@
     "firstAndLastLetter": "Noah Varley",
     "parentId": "7",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 7",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "70",
@@ -627,7 +834,10 @@
     "firstAndLastLetter": "Eduardo Warner",
     "parentId": "7",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 8",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "71",
@@ -636,7 +846,10 @@
     "firstAndLastLetter": "Cherish Morris",
     "parentId": "7",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 8",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "72",
@@ -645,7 +858,10 @@
     "firstAndLastLetter": "Joseph Buckley",
     "parentId": "7",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 8",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "73",
@@ -654,7 +870,10 @@
     "firstAndLastLetter": "Chad Tobin",
     "parentId": "7",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 8",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "74",
@@ -663,7 +882,10 @@
     "firstAndLastLetter": "Macy Johnson",
     "parentId": "7",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 8",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "75",
@@ -672,7 +894,10 @@
     "firstAndLastLetter": "Michaela Fox",
     "parentId": "7",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 8",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "76",
@@ -681,7 +906,10 @@
     "firstAndLastLetter": "Eduardo Jeffery",
     "parentId": "7",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 8",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "77",
@@ -690,7 +918,10 @@
     "firstAndLastLetter": "Nathan Mccall",
     "parentId": "7",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 8",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "78",
@@ -699,7 +930,10 @@
     "firstAndLastLetter": "Henry Sinclair",
     "parentId": "7",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 8",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "79",
@@ -708,7 +942,10 @@
     "firstAndLastLetter": "Bryon Turner",
     "parentId": "7",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 8",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "80",
@@ -717,7 +954,10 @@
     "firstAndLastLetter": "Ethan King",
     "parentId": "4",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 9",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "81",
@@ -726,7 +966,10 @@
     "firstAndLastLetter": "Eden Gordon",
     "parentId": "81",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 9",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "82",
@@ -735,7 +978,10 @@
     "firstAndLastLetter": "Alessia Phillips",
     "parentId": "82",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 9",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "83",
@@ -744,7 +990,10 @@
     "firstAndLastLetter": "Aiden Wills",
     "parentId": "83",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 9",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "84",
@@ -753,7 +1002,10 @@
     "firstAndLastLetter": "Mary Benfield",
     "parentId": "84",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 9",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "85",
@@ -762,7 +1014,10 @@
     "firstAndLastLetter": "Jazmin Shea",
     "parentId": "85",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 9",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "86",
@@ -771,7 +1026,10 @@
     "firstAndLastLetter": "Peter Nash",
     "parentId": "86",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 9",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "87",
@@ -780,7 +1038,10 @@
     "firstAndLastLetter": "Kirsten Stewart",
     "parentId": "87",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 9",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "88",
@@ -789,7 +1050,10 @@
     "firstAndLastLetter": "Carter Gaynor",
     "parentId": "88",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 9",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "89",
@@ -798,7 +1062,10 @@
     "firstAndLastLetter": "Sasha Holmes",
     "parentId": "89",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 9",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "90",
@@ -807,7 +1074,10 @@
     "firstAndLastLetter": "Dasha Hooper",
     "parentId": "90",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 10",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "91",
@@ -816,7 +1086,10 @@
     "firstAndLastLetter": "Benjamin Richardson",
     "parentId": "91",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 10",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "92",
@@ -825,7 +1098,10 @@
     "firstAndLastLetter": "Maxwell Hopkins",
     "parentId": "92",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 10",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "93",
@@ -834,7 +1110,10 @@
     "firstAndLastLetter": "Camellia Maxwell",
     "parentId": "93",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 10",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "94",
@@ -843,7 +1122,10 @@
     "firstAndLastLetter": "Kate Reyes",
     "parentId": "94",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 10",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "95",
@@ -852,7 +1134,10 @@
     "firstAndLastLetter": "Sasha Briggs",
     "parentId": "95",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 10",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "96",
@@ -861,7 +1146,10 @@
     "firstAndLastLetter": "Tyson Young",
     "parentId": "96",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 10",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "97",
@@ -870,7 +1158,10 @@
     "firstAndLastLetter": "Caleb Roberts",
     "parentId": "97",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 10",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "98",
@@ -879,7 +1170,10 @@
     "firstAndLastLetter": "Matt King",
     "parentId": "98",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 10",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "99",
@@ -888,7 +1182,10 @@
     "firstAndLastLetter": "Margaret Snell",
     "parentId": "99",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 10",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   },
   {
     "id": "100",
@@ -897,6 +1194,9 @@
     "firstAndLastLetter": "Bart Roberts",
     "parentId": "100",
     "firstname": "abc",
-    "lastname": "xyz"
+    "lastname": "xyz",
+    "department": "Group 1",
+    "mail": "abc.xyz@example.com",
+    "tel": "+49 892412214"
   }
 ]

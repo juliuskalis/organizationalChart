@@ -16,6 +16,8 @@ export class OrganizationChartChildComponent implements OnInit {
   peopleWithoutChildren: any[] = [];
   peopleWithChildren: any[] = [];
 
+  customStylesClass: string = '';
+
   ngOnInit() {
     if(this.orga) {
       this.orga.forEach(o => { // for every element
@@ -25,6 +27,7 @@ export class OrganizationChartChildComponent implements OnInit {
           this.peopleWithChildren.push(o);
         }
       });
+      this.customStylesClass = this.getClassesForLayout(this.peopleWithoutChildren.length);
     }
   }
 
@@ -33,6 +36,33 @@ export class OrganizationChartChildComponent implements OnInit {
     if(child) {
       child.displayChildren = !child.displayChildren;
     }
+  }
+
+  getClassesForLayout(val: number): string {
+    let result = '';
+    if (val !== 0) {
+      if (val === 1) {
+        result = 'beforeElement';
+      } else {
+        result = 'grid gap-4 p-4 border border-gray-400 ';
+        if (val >= 6 && val < 12) {
+          result += 'cGridColumns2';
+        } else if (val >= 12 && val < 24) {
+          result += 'cGridColumns3';
+        } else if (val >= 24 && val < 48) {
+          result += 'cGridColumns4';
+        } else if (val >= 48 && val < 96) {
+          result += 'cGridColumns5';
+        } else if (val >= 96 && val < 192) {
+          result += 'cGridColumns6';
+        } else if (val >= 192 && val < 384) {
+          result += 'cGridColumns7';
+        } else if (val >= 384) {
+          result += 'cGridColumns8';
+        }
+      }
+    }
+    return result;
   }
 
 }
