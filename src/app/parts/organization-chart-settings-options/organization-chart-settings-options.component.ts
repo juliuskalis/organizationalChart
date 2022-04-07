@@ -49,16 +49,25 @@ export class OrganizationChartSettingsOptionsComponent implements OnDestroy, OnI
 
   calcHeight(val: number) {
     const x = document.getElementById('oChartSettingsScrollBox')?.getClientRects()[0];
-    console.log(x);
-    if (this.layoutType === 'pc') {
-      this.height = val - ((36 * 2) + 72);
-      if (x && x.height < val) {
-        this.height = x.height;
-      }
+    if (!x) {return}
+    const maxHeight = val - (this.layoutType === 'pc' ? ((36 * 2) + 72) : ((12 * 2) + 72));
+
+    if (maxHeight > x.height) {
+      this.height = x.height;
+      this.setOverflow(true);
     } else {
-      this.height = val - ((12 * 2) + 72);
-      if (x && x.height < val) {
-        this.height = x.height;
+      this.height = maxHeight;
+      this.setOverflow(false);
+    }
+  }
+
+  setOverflow(bool: boolean) {
+    const o = document.getElementById('oChartSettingsOverflow');
+    if(o) {
+      if (bool) {
+        o.style.overflow = 'hidden';
+      } else {
+        o.style.overflow = this.layoutType === 'pc' ? 'overlay' : 'auto';
       }
     }
   }

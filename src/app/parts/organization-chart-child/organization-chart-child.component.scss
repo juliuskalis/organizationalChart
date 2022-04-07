@@ -98,3 +98,19 @@ $space: 2rem;
   background-color: $lineColor;
   pointer-events: none;
 }
+
+
+:not(.flex) > .peopleList > .beforeElement {
+  margin-top: 2rem;
+}
+
+:not(.flex) > .peopleList > .beforeElement:before {
+  content: '';
+  position: absolute;
+  top: -2rem;
+  left: calc(50% - 1px);
+  height: $space;
+  width: 1px;
+  background-color: $lineColor;
+  pointer-events: none;
+}
