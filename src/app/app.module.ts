@@ -19,7 +19,9 @@ import {
   faDesktop,
   faMobileButton,
   faPlus,
-  faMinus, faChevronDown
+  faMinus,
+  faChevronDown,
+  faUpDownLeftRight
 } from "@fortawesome/free-solid-svg-icons";
 import { DeviceCheckComponent } from './sites/device-check/device-check.component';
 import { SetBodyIdPipe } from './pipes/set-body-id.pipe';
@@ -56,7 +58,8 @@ export class AppModule {
       faChevronUp,
       faChevronDown,
       faPlus,
-      faMinus
+      faMinus,
+      faUpDownLeftRight
     );
   }
 }

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-part-switch',
@@ -6,14 +6,6 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
   styleUrls: ['./switch.component.scss']
 })
 export class SwitchComponent {
-
   @Input() value: boolean | undefined;
-  @Output() valueEvent = new EventEmitter<boolean>();
-
-  toggleValue(): void {
-    this.value = !this.value;
-    this.valueEvent.emit(this.value);
-  }
-
 }
 

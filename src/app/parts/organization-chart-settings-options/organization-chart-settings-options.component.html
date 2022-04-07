@@ -1,14 +1,4 @@
 <div id="oChartSettingsOverflow" class="bg-white/80 duration-300" [ngStyle]="{'height': displayMenu ? height + 'px' : '0'}" (window:resize)="onResize($event)">
-
-
-
-<!-- die scrollBox nehmen und abgleichen ob die scrollBox oder die innerHeight größer ist -->
-
-
-
-
-  <!--      overflow-auto overlay-->
-  <!--      calc(100vh - 12rem)-->
   <div id="oChartSettingsScrollBox" class="p-8 flex flex-col gap-y-4">
 
     <!--        <div>-->
@@ -17,6 +7,23 @@
     <!--        </div>-->
 
     <!--        <div class="solidLine"></div>-->
+
+
+        <div>
+          <div class="text-gray-700 uppercase text-sm">Controls<span class="ml-2 text-gray-300 text-sm lowercase">(alpha)</span></div>
+          <div class="mt-4 flex justify-between items-center" [ngClass]="layoutType === 'pc' ? '' : 'opacity-20'">
+            <div class="flex items-center">
+              <fa-icon [icon]="['fas', 'up-down-left-right']" class="text-2xl mr-4"></fa-icon>
+              Drag to scroll
+            </div>
+            <div (click)="toggleScrollOnPC()" class="cursor-pointer" *ngIf="layoutType === 'pc'">
+              <app-part-switch [value]="scrollOnPC"></app-part-switch>
+            </div>
+            <div *ngIf="layoutType !== 'pc'">(only for pc)</div>
+          </div>
+        </div>
+
+        <div class="solidLine"></div>
 
     <div class="flex flex-col gap-y-4">
       <div class="text-gray-700 uppercase text-sm">View</div>

@@ -1,5 +1,5 @@
-<div id='scrollContainer'>
-  <div class="flex select-none" [ngClass]="layoutType === 'pc' ? '' : 'mb-32'">
+<div id='scrollContainer' [ngClass]="scrollOnPC ? 'h-full overflow-hidden cursor-move' : ''">
+  <div class="flex" [ngClass]="layoutType === 'pc' ? '' : 'mb-32'">
     <div id='organigram' [ngStyle]="{'zoom': scaleMultiplier + '%'}" class="p-8 mx-auto">
       <div *ngIf="!startFrom" class='py-4 px-8 bg-white mx-auto max-w-max rounded-xl'>Company</div>
       <div *ngIf="startFrom" class="mx-auto relative" style="width: 1px;">
