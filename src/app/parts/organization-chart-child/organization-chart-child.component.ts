@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {OrganizationChartService} from "../../services/organization-chart.service";
 
 @Component({
   selector: 'app-part-organization-chart-child',
@@ -18,6 +19,9 @@ export class OrganizationChartChildComponent implements OnInit {
 
   customStylesClass: string = '';
 
+  constructor(private organizationChartService: OrganizationChartService) {
+  }
+
   ngOnInit() {
     if(this.orga) {
       this.orga.forEach(o => { // for every element
@@ -36,6 +40,7 @@ export class OrganizationChartChildComponent implements OnInit {
     if(child) {
       child.displayChildren = !child.displayChildren;
     }
+    this.organizationChartService.triggerViewChange();
   }
 
   getClassesForLayout(val: number): string {

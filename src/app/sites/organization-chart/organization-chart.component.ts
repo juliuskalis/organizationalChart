@@ -32,7 +32,10 @@ export class OrganizationChartComponent implements OnInit {
 
   layoutType: string = 'pc';
   scrollOnPC: boolean = false;
-  
+
+  scrollBooster: any;
+  scrollBoosterInitialized: boolean = false;
+
   destroy: Subject<boolean> = new Subject<boolean>();
 
   constructor(private router: Router, private organizationChartService: OrganizationChartService) {
@@ -42,30 +45,50 @@ export class OrganizationChartComponent implements OnInit {
 
   checkLayoutType() {
     if (/Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-      this.layoutType ='phone';
+      this.layoutType = 'phone';
     } else {
-      this.layoutType ='pc';
+      this.layoutType = 'pc';
     }
   }
 
   ngOnInit(): void {
+    this.updateScrollBooster();
     this.checkForHash();
     this.getFirstAndLastLetter();
     this.start();
-    this.checkForScrollOnPC();
   }
 
-  checkForScrollOnPC() {
-    new ScrollBooster({
-      viewport: document.querySelector('#scrollContainer'),
-      scrollMode: 'native',
-      direction: 'transform',
-      emulateScroll: false, // scroll on wheel events
-    });
-
-    this.organizationChartService.scrollOnPC.pipe(takeUntil(this.destroy)).subscribe((val: boolean) => {
-      this.scrollOnPC = val;
-    });
+  updateScrollBooster() {
+    if (this.layoutType === 'pc') {
+      if (this.scrollOnPC) {
+        const dimensions = document.getElementById('organigram')?.getClientRects()[0];
+        if (dimensions) {
+          if (this.scrollBoosterInitialized) {
+            this.scrollBooster.updateOptions({
+              content: {
+                width: dimensions.width * this.scaleMultiplier,
+                height: dimensions.height * this.scaleMultiplier
+              }
+            });
+            this.scrollBooster.updateMetrics();
+          } else {
+            this.scrollBooster = new ScrollBooster({
+              viewport: document.querySelector('#scrollContainer'),
+              scrollMode: 'native',
+              direction: 'transform',
+              emulateScroll: false, // scroll on wheel events
+            });
+            this.scrollBooster.setPosition({ x: -(dimensions.x * (this.scaleMultiplier / 100)), y: -(dimensions.y * (this.scaleMultiplier / 100)) });
+            this.scrollBoosterInitialized = true;
+          }
+        }
+      } else {
+        if (this.scrollBoosterInitialized) {
+          this.scrollBoosterInitialized = false;
+          this.scrollBooster.destroy();
+        }
+      }
+    }
   }
 
   checkForHash() {
@@ -84,8 +107,12 @@ export class OrganizationChartComponent implements OnInit {
 
   // one time call
   start() {
+    this.organizationChartService.viewChange.pipe(takeUntil(this.destroy)).subscribe(() => {
+      this.updateScrollBooster();
+    });
     this.organizationChartService.scaleMultiplier.pipe(takeUntil(this.destroy)).subscribe((val: number) => {
       this.scaleMultiplier = val;
+      this.updateScrollBooster();
     });
     this.organizationChartService.selectedUserId.pipe(takeUntil(this.destroy)).subscribe((userId: string | null) => {
       if (userId) {
@@ -101,6 +128,10 @@ export class OrganizationChartComponent implements OnInit {
     this.organizationChartService.startFrom.pipe(takeUntil(this.destroy)).subscribe((start: boolean) => {
       this.startFrom = start;
       this.loadOrganigramm();
+    });
+    this.organizationChartService.scrollOnPC.pipe(takeUntil(this.destroy)).subscribe((val: boolean) => {
+      this.scrollOnPC = val;
+      this.updateScrollBooster();
     });
   }
 

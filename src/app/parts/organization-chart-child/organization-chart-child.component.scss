@@ -20,7 +20,7 @@ $space: 2rem;
 }
 
 .people > div:before {
-  left: 0;
+  left: -1px;
 }
 
 .people > div:after {
@@ -32,7 +32,7 @@ $space: 2rem;
 }
 
 .flex > .people > div:first-of-type:before {
-  width: 50%;
+  width: calc(50% + 1px);
 }
 
 .people > div:last-of-type:after {

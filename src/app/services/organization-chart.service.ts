@@ -6,6 +6,8 @@ import {BehaviorSubject, Observable} from "rxjs";
 })
 export class OrganizationChartService {
 
+  viewChange: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
+
   selectedUserId: BehaviorSubject<string | null> = new BehaviorSubject<string | null>('');
   pinnedUserId: BehaviorSubject<string | null> = new BehaviorSubject<string | null>('1');
   userToScroll: BehaviorSubject<string | null> = new BehaviorSubject<string | null>('');
@@ -26,6 +28,10 @@ export class OrganizationChartService {
     if (scrollOnPC) {
       this.scrollOnPC.next(JSON.parse(scrollOnPC));
     }
+  }
+
+  triggerViewChange() {
+    this.viewChange.next(true);
   }
 
   setSelectedUserId(id: string | null) {

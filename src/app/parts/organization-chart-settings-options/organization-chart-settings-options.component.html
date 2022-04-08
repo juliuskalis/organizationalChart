@@ -1,43 +1,27 @@
 <div id="oChartSettingsOverflow" class="bg-white/80 duration-300" [ngStyle]="{'height': displayMenu ? height + 'px' : '0'}" (window:resize)="onResize($event)">
   <div id="oChartSettingsScrollBox" class="p-8 flex flex-col gap-y-4">
 
-    <!--        <div>-->
-    <!--          <div class="text-green-700 uppercase text-sm mb-4">Suche</div>-->
-    <!--          <div class="h-12 border"></div>-->
-    <!--        </div>-->
-
-    <!--        <div class="solidLine"></div>-->
-
-
-        <div>
-          <div class="text-gray-700 uppercase text-sm">Controls<span class="ml-2 text-gray-300 text-sm lowercase">(alpha)</span></div>
-          <div class="mt-4 flex justify-between items-center" [ngClass]="layoutType === 'pc' ? '' : 'opacity-20'">
-            <div class="flex items-center">
-              <fa-icon [icon]="['fas', 'up-down-left-right']" class="text-2xl mr-4"></fa-icon>
-              Drag to scroll
-            </div>
-            <div (click)="toggleScrollOnPC()" class="cursor-pointer" *ngIf="layoutType === 'pc'">
-              <app-part-switch [value]="scrollOnPC"></app-part-switch>
-            </div>
-            <div *ngIf="layoutType !== 'pc'">(only for pc)</div>
-          </div>
+    <div>
+      <div class="text-gray-700 uppercase text-sm">Controls<span class="ml-2 text-gray-300 text-sm lowercase">(alpha)</span></div>
+      <div class="mt-4 flex justify-between items-center" [ngClass]="layoutType === 'pc' ? '' : 'opacity-20'">
+        <div class="flex items-center">
+          <fa-icon [icon]="['fas', 'up-down-left-right']" class="text-2xl mr-4"></fa-icon>
+          Drag to scroll
         </div>
+        <div (click)="toggleScrollOnPC()" class="cursor-pointer" *ngIf="layoutType === 'pc'">
+          <app-part-switch [value]="scrollOnPC"></app-part-switch>
+        </div>
+        <div *ngIf="layoutType !== 'pc'">(only for pc)</div>
+      </div>
+    </div>
 
-        <div class="solidLine"></div>
+    <div class="solidLine"></div>
 
     <div class="flex flex-col gap-y-4">
       <div class="text-gray-700 uppercase text-sm">View</div>
 
-      <!--          <div *ngFor="let item of switchValues" class="flex justify-between">-->
-      <!--            <div>{{item.text}}</div>-->
-      <!--            <div>-->
-      <!--              <app-part-switch [value]="item.value" (valueEvent)="setSwitchValueOf(item.id, $event)"></app-part-switch>-->
-      <!--            </div>-->
-      <!--          </div>-->
-
       <div class="flex justify-between items-center">
         <div class="flex items-center">
-          <!--              <i class="fal fa-search text-xl mr-2"></i>-->
           <img src="../../../assets/icons/suche.svg" alt="Search Icon" class="opacity-80 w-6 mr-2">
           <div (click)="resetScaleMultiplier()" class="py-2 px-3 rounded-full duration-100"
                [ngClass]="scaleMultiplier === 100 ? 'cursor-default' : 'cursor-pointer bg-gray-200 hover:bg-gray-300'"
@@ -50,14 +34,12 @@
             class="w-12 h-12 bg-gray-200 flex justify-center items-center rounded-full select-none text-xl hover:bg-gray-300 duration-100"
             [ngClass]="scaleMultiplier === 10 ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'"
             (click)="setScaleMultiplier(false)">
-            <!--                <i class="fal fa-minus"></i>-->
             <img src="../../../assets/icons/minus.svg" alt="Zooms content smaller" class="opacity-80 w-3">
           </div>
           <div
             class="w-12 h-12 bg-gray-200 flex justify-center items-center rounded-full select-none text-xl hover:bg-gray-300 duration-100"
             [ngClass]="scaleMultiplier === 200 ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'"
             (click)="setScaleMultiplier(true)">
-            <!--                <i class="fal fa-plus"></i>-->
             <img src="../../../assets/icons/plus.svg" alt="Zooms content bigger" class="opacity-80 w-3">
           </div>
         </div>
