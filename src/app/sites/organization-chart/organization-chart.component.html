@@ -1,6 +1,5 @@
-<div id='scrollContainer' class="h-full" [ngClass]="scrollOnPC ? 'cursor-move' : ''" style="overflow: overlay">
-<!--  overflow-hidden overflow-[overlay]-->
-  <div id="scrollContainerContent" class="flex items-center min-h-full" [ngClass]="layoutType === 'pc' ? '' : 'mb-32'">
+<div id='scrollContainer' class="h-full" [ngClass]="scrollOnPC ? 'cursor-move pointer-events-none' : ''" style="overflow: overlay">
+  <div id="scrollContainerContent" class="flex items-center min-h-full pointer-events-auto" [ngClass]="layoutType === 'pc' ? '' : 'mb-32'">
     <div id='organigram' [ngStyle]="{'zoom': scaleMultiplier + '%'}" class="p-8 mx-auto">
       <div *ngIf="!startFrom" class='py-4 px-8 bg-white mx-auto max-w-max rounded-xl'>Company</div>
       <div *ngIf="startFrom" class="mx-auto relative" style="width: 1px;">

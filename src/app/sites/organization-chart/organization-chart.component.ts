@@ -140,6 +140,7 @@ export class OrganizationChartComponent implements OnInit {
     if (start) {
       this.organizationChart = [start]; // adds selected data as start reference
       this.organizationChart = this.generateStructure(this.organizationChart); // starts object generation
+      this.calculateChildrenLength(this.organizationChart); // loops through the generated structure and adds the total number of children from children ...
       if (!this.startFrom) {
         this.organizationChart = this.getParent(this.organizationChart); // starts object generation for parents
       }
@@ -170,6 +171,17 @@ export class OrganizationChartComponent implements OnInit {
 
   getChildren(id: string | null): any[] {
     return this.data.filter(x => x.parentId === id); // gets children of element
+  }
+
+  calculateChildrenLength(o: any[]) {
+    let res = o.length;
+    for (const el of o) { // for every organigram object
+      if (el.children && el.children.length > 0) { // when the element has children
+        el.childrenLength = this.calculateChildrenLength(el.children); // calls the method again for childrenLength of current element
+        res += el.childrenLength; // assigns the returned value
+      }
+    }
+    return res; // returns always o.length
   }
 
   ngOnDestroy(): void {

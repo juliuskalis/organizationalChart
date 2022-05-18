@@ -19,8 +19,7 @@ export class OrganizationChartChildComponent implements OnInit {
 
   customStylesClass: string = '';
 
-  constructor(private organizationChartService: OrganizationChartService) {
-  }
+  constructor(private organizationChartService: OrganizationChartService) { }
 
   ngOnInit() {
     if(this.orga) {

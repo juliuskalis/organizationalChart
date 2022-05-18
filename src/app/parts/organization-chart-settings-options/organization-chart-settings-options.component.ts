@@ -17,6 +17,7 @@ export class OrganizationChartSettingsOptionsComponent implements OnInit, OnDest
   @Input() displayMenu: boolean = true;
   @Input() layoutType: string = 'pc';
   height: number = 500;
+  innerHeight: number = window.innerHeight;
 
   scaleMultiplier: number = 100;
   scrollOnPC: boolean = false;
@@ -29,14 +30,13 @@ export class OrganizationChartSettingsOptionsComponent implements OnInit, OnDest
 
   ngOnInit() {
     if (this.layoutType === 'pc') {
-      this.calcHeight(window.innerHeight, 64);
+      this.calcHeight(window.innerHeight, 76);
     } else {
       this.calcHeight(window.innerHeight);
     }
   }
 
   initializeSubscriptions() {
-    this.calcHeight(window.innerHeight);
     this.organizationChartService.scaleMultiplier.pipe(takeUntil(this.destroy)).subscribe((value: number) => {
       this.scaleMultiplier = value;
     });
@@ -58,14 +58,16 @@ export class OrganizationChartSettingsOptionsComponent implements OnInit, OnDest
   }
 
   onResize(e: any) {
-    this.calcHeight(e.target.innerHeight);
+    if (this.innerHeight !== e.target.innerHeight) {
+      this.calcHeight(e.target.innerHeight);
+    }
   }
 
   calcHeight(val: number, extraElementHeight: number = 0) {
+    this.innerHeight = val;
     const x = document.getElementById('oChartSettingsScrollBox')?.getClientRects()[0];
     if (!x) {return}
     const elementHeight = x.height + extraElementHeight;
-    console.log('x.height', x.height, 'elementHeight', elementHeight);
     const maxHeight = val - (this.layoutType === 'pc' ? ((36 * 2) + 72) : ((12 * 2) + 72));
 
     if (maxHeight > elementHeight) {

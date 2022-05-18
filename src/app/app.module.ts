@@ -27,6 +27,7 @@ import { DeviceCheckComponent } from './sites/device-check/device-check.componen
 import { SetBodyIdPipe } from './pipes/set-body-id.pipe';
 import { OrganizationChartSettingsOptionsComponent } from './parts/organization-chart-settings-options/organization-chart-settings-options.component';
 import { LayoutTestPageComponent } from './sites/layout-test-page/layout-test-page.component';
+import { OrganizationChartChildLengthBoxComponent } from './parts/organization-chart-child-length-box/organization-chart-child-length-box.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { LayoutTestPageComponent } from './sites/layout-test-page/layout-test-pa
     DeviceCheckComponent,
     SetBodyIdPipe,
     OrganizationChartSettingsOptionsComponent,
-    LayoutTestPageComponent
+    LayoutTestPageComponent,
+    OrganizationChartChildLengthBoxComponent
   ],
   imports: [
     BrowserModule,
