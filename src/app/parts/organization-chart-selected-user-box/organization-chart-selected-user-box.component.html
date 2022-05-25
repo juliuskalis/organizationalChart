@@ -1,0 +1,27 @@
+<div class="bg-white rounded-xl overflow-hidden">
+  <div class="border-t-8 w-[400px] h-32 px-4 flex justify-between items-center" style="border-color: #6495ED;">
+    <div class="flex gap-x-4 items-center">
+      <div class="bg-gray-100 w-20 h-20 rounded-full uppercase text-3xl flex justify-center items-center">
+        {{user.firstAndLastLetter}}
+      </div>
+      <div>
+        <div>{{user.firstname}} {{user.lastname}}</div>
+        <div class="text-gray-400">{{user.title}}</div>
+      </div>
+    </div>
+    <div class="flex gap-x-4">
+      <div class="w-12 h-12 bg-[#6495ED] text-white rounded-full flex justify-center items-center text-2xl cursor-pointer"
+           (click)="scrollToId(user.id)">
+        <fa-icon [icon]="['fas', 'arrows-to-eye']" size="1x"></fa-icon>
+      </div>
+      <div class="w-12 h-12 bg-[#6495ED] text-white rounded-full flex justify-center items-center text-2xl cursor-pointer"
+           (click)="displayContent = !displayContent">
+        <fa-icon [icon]="['fas', 'arrow-turn-down']" size="1x" class="ml-1"></fa-icon>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="displayContent">
+    content
+  </div>
+</div>
+

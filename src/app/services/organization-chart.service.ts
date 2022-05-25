@@ -8,9 +8,9 @@ export class OrganizationChartService {
 
   viewChange: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
 
-  selectedUserId: BehaviorSubject<string | null> = new BehaviorSubject<string | null>('');
+  selectedUserId: BehaviorSubject<string | undefined> = new BehaviorSubject<string | undefined>(undefined);
   pinnedUserId: BehaviorSubject<string | null> = new BehaviorSubject<string | null>('1');
-  userToScroll: BehaviorSubject<string | null> = new BehaviorSubject<string | null>('');
+  userToScroll: BehaviorSubject<string | undefined> = new BehaviorSubject<string | undefined>(undefined);
   scaleMultiplier: BehaviorSubject<number> = new BehaviorSubject<number>(100);
   startFrom: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   scrollOnPC: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
@@ -34,7 +34,7 @@ export class OrganizationChartService {
     this.viewChange.next(true);
   }
 
-  setSelectedUserId(id: string | null) {
+  setSelectedUserId(id: string | undefined) {
     this.selectedUserId.next(id);
   }
 
@@ -42,8 +42,7 @@ export class OrganizationChartService {
     this.pinnedUserId.next(id);
   }
 
-  scrollToUserId(id: string | null) {
-    console.log(id);
+  scrollToUserId(id: string | undefined) {
     this.userToScroll.next(id);
   }
 

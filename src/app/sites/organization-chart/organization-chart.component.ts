@@ -6,13 +6,17 @@ import {Subject, takeUntil} from "rxjs";
 import {Router} from "@angular/router";
 // @ts-ignore
 import ScrollBooster from 'scrollbooster';
+import {slideIn, slideOut} from "../../animations/animations";
 
 @Component({
   selector: 'app-organization-chart',
   templateUrl: './organization-chart.component.html',
-  styleUrls: ['./organization-chart.component.scss']
+  styleUrls: ['./organization-chart.component.scss'],
+  animations: [slideIn, slideOut]
 })
 export class OrganizationChartComponent implements OnInit {
+
+  // testVal: string = '';
 
   data: any[] = JSONdata;
   organizationChart: any[] = [];
@@ -27,7 +31,8 @@ export class OrganizationChartComponent implements OnInit {
   scaleMultiplier: number = 100;
 
   selectedUserId: string | undefined;
-  currentPinnedUser: any | undefined;
+  selectedUser: any;
+  pinnedUserId: any | undefined;
   startFrom: boolean = false;
 
   layoutType: string = 'pc';
@@ -98,7 +103,7 @@ export class OrganizationChartComponent implements OnInit {
     this.urlHash = window.location.hash.split('#')[1];
     if (this.urlHash && this.data.find(x => x.id === this.urlHash)) {
       this.organizationChartService.pinUserId(this.urlHash);
-      window.location.hash = '';
+      // window.location.hash = '';
     }
   }
 
@@ -117,14 +122,15 @@ export class OrganizationChartComponent implements OnInit {
       this.scaleMultiplier = val;
       this.updateScrollBooster();
     });
-    this.organizationChartService.selectedUserId.pipe(takeUntil(this.destroy)).subscribe((userId: string | null) => {
+    this.organizationChartService.selectedUserId.pipe(takeUntil(this.destroy)).subscribe((userId: string | undefined) => {
+      this.selectedUserId = userId;
       if (userId) {
-        this.selectedUserId = userId;
+        this.selectedUser = this.data.find((x: any) => x.id === this.selectedUserId);
       }
     });
     this.organizationChartService.pinnedUserId.pipe(takeUntil(this.destroy)).subscribe((userId: string | null) => {
       if (userId) {
-        this.clipped = userId;
+        this.pinnedUserId = userId;
         this.loadOrganigramm();
       }
     });
@@ -136,10 +142,16 @@ export class OrganizationChartComponent implements OnInit {
       this.scrollOnPC = val;
       this.updateScrollBooster();
     });
+    this.organizationChartService.userToScroll.pipe(takeUntil(this.destroy)).subscribe((val: string | undefined) => {
+      if (val) {
+        this.scrollToId(val);
+      }
+    });
+
   }
 
   loadOrganigramm() {
-    const start = this.data.find(x => x.id === this.clipped); // finds data for selected value
+    const start = this.data.find(x => x.id === this.pinnedUserId); // finds data for selected value
     if (start) {
       this.organizationChart = [start]; // adds selected data as start reference
       this.organizationChart = this.generateStructure(this.organizationChart); // starts object generation
@@ -187,7 +199,7 @@ export class OrganizationChartComponent implements OnInit {
     return res; // returns always o.length
   }
 
-  scrollToId(value: string) {
+  scrollToId(value: string, select?: boolean) {
     /**
      * screenWidth and screenHeight do not need to get multiplied by scaleMultiplier
      * they are already affected by the scaled scrollContainer
@@ -201,14 +213,16 @@ export class OrganizationChartComponent implements OnInit {
       const centeredValueX = screenWidth - ((newElementPos.width * sm) / 2);
       const centeredValueY = screenHeight - ((newElementPos.height * sm) / 2);
       scrollContainer.scrollTo({
-        left: scrollContainer.scrollLeft + ((newElementPos.x * sm) - centeredValueX), // takes currentPosition X of scrollPosition from scrollContainer and adds newElementPos X and subtracts the centeredValueX
-        top: scrollContainer.scrollTop + ((newElementPos.y * sm) - centeredValueY), // takes currentPosition Y of scrollPosition from scrollContainer and adds newElementPos Y and subtracts the centeredValueY
+        left: Math.round(scrollContainer.scrollLeft + ((newElementPos.x * sm) - centeredValueX)), // takes currentPosition X of scrollPosition from scrollContainer and adds newElementPos X and subtracts the centeredValueX
+        top: Math.round(scrollContainer.scrollTop + ((newElementPos.y * sm) - centeredValueY)), // takes currentPosition Y of scrollPosition from scrollContainer and adds newElementPos Y and subtracts the centeredValueY
         behavior: 'smooth'
       })
     }
-    setTimeout(() => {
-      this.organizationChartService.setSelectedUserId(value);
-    }, 500);
+    if (select) {
+      setTimeout(() => {
+        this.organizationChartService.setSelectedUserId(value);
+      }, 500);
+    }
   }
 
   ngOnDestroy(): void {

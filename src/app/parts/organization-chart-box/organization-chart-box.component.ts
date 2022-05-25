@@ -19,7 +19,7 @@ export class OrganizationChartBoxComponent {
       if (this.selectedUser !== userId) {
         this.organizationChartService.setSelectedUserId(userId);
       } else {
-        this.organizationChartService.setSelectedUserId('null');
+        this.organizationChartService.setSelectedUserId(undefined);
       }
     }
   }

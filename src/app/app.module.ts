@@ -20,13 +20,17 @@ import {
   faPlus,
   faMinus,
   faChevronDown,
-  faUpDownLeftRight
+  faUpDownLeftRight,
+  faArrowTurnDown,
+  faArrowsToEye
 } from "@fortawesome/free-solid-svg-icons";
 import { DeviceCheckComponent } from './sites/device-check/device-check.component';
 import { SetBodyIdPipe } from './pipes/set-body-id.pipe';
 import { OrganizationChartSettingsOptionsComponent } from './parts/organization-chart-settings-options/organization-chart-settings-options.component';
 import { LayoutTestPageComponent } from './sites/layout-test-page/layout-test-page.component';
 import {FormsModule} from "@angular/forms";
+import { OrganizationChartSelectedUserBoxComponent } from './parts/organization-chart-selected-user-box/organization-chart-selected-user-box.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -39,13 +43,15 @@ import {FormsModule} from "@angular/forms";
     DeviceCheckComponent,
     SetBodyIdPipe,
     OrganizationChartSettingsOptionsComponent,
-    LayoutTestPageComponent
+    LayoutTestPageComponent,
+    OrganizationChartSelectedUserBoxComponent
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         FontAwesomeModule,
-        FormsModule
+        FormsModule,
+        BrowserAnimationsModule
     ],
   providers: [],
   bootstrap: [AppComponent]
@@ -59,7 +65,9 @@ export class AppModule {
       faChevronDown,
       faPlus,
       faMinus,
-      faUpDownLeftRight
+      faUpDownLeftRight,
+      faArrowTurnDown,
+      faArrowsToEye
     );
   }
 }
