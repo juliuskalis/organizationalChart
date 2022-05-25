@@ -1,18 +1,12 @@
-<div *ngIf="user" class="box" (click)='selectUser(user.id)' [title]='user.firstname + " " + user.lastname' [id]="user.id">
+<div *ngIf="user" class="box" (click)='selectUser(user.id)' [title]='user.firstname + " " + user.lastname'
+     [id]="user.id" [style.box-shadow]="user.id === selectedUser ? '0 0 0 3px #6495ED' : ''">
   <div class="flex items-center gap-x-4">
-    <div class="flex justify-center items-center text-2xl bg-gray-100 rounded-full w-16 h-16">
+    <div class="flex justify-center items-center text-2xl bg-gray-100 rounded-full w-16 h-16 uppercase">
       {{user.firstAndLastLetter}}
     </div>
     <div>
       <div>{{user.firstname}} {{user.lastname}}</div>
       <div class="text-gray-400">{{user.title}}</div>
-    </div>
-  </div>
-  <div class="overflow-hidden duration-100" [style.height]="user.id === selectedUser ? height + 'px' : '0px'">
-    <div class="pt-4" id="chartBoxMoreInfo-{{user.id}}">
-      <div>{{user.department}}</div>
-      <div>{{user.mail}}</div>
-      <div>{{user.tel}}</div>
     </div>
   </div>
 </div>

@@ -26,6 +26,7 @@ import { DeviceCheckComponent } from './sites/device-check/device-check.componen
 import { SetBodyIdPipe } from './pipes/set-body-id.pipe';
 import { OrganizationChartSettingsOptionsComponent } from './parts/organization-chart-settings-options/organization-chart-settings-options.component';
 import { LayoutTestPageComponent } from './sites/layout-test-page/layout-test-page.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -40,11 +41,12 @@ import { LayoutTestPageComponent } from './sites/layout-test-page/layout-test-pa
     OrganizationChartSettingsOptionsComponent,
     LayoutTestPageComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FontAwesomeModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FontAwesomeModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

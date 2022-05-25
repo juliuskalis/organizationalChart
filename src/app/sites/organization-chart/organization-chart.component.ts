@@ -78,7 +78,10 @@ export class OrganizationChartComponent implements OnInit {
               direction: 'transform',
               emulateScroll: false, // scroll on wheel events
             });
-            this.scrollBooster.setPosition({ x: -(dimensions.x * (this.scaleMultiplier / 100)), y: -(dimensions.y * (this.scaleMultiplier / 100)) });
+            this.scrollBooster.setPosition({
+              x: -(dimensions.x * (this.scaleMultiplier / 100)),
+              y: -(dimensions.y * (this.scaleMultiplier / 100))
+            });
             this.scrollBoosterInitialized = true;
           }
         }
@@ -182,6 +185,30 @@ export class OrganizationChartComponent implements OnInit {
       }
     }
     return res; // returns always o.length
+  }
+
+  scrollToId(value: string) {
+    /**
+     * screenWidth and screenHeight do not need to get multiplied by scaleMultiplier
+     * they are already affected by the scaled scrollContainer
+     */
+    const scrollContainer = document.getElementById('scrollContainer');
+    const newElementPos = document.getElementById(value)?.getBoundingClientRect();
+    const sm = this.scaleMultiplier / 100; // value is in percent but needs to be a decimal
+    if (scrollContainer && newElementPos && sm) {
+      const screenWidth = scrollContainer?.offsetWidth / 2; // subtracts newElement width from screenWidth to get a value that centers the new element horizontally
+      const screenHeight = scrollContainer?.offsetHeight / 2; // subtracts newElement height from screenHeight to get a value that centers the new element vertically
+      const centeredValueX = screenWidth - ((newElementPos.width * sm) / 2);
+      const centeredValueY = screenHeight - ((newElementPos.height * sm) / 2);
+      scrollContainer.scrollTo({
+        left: scrollContainer.scrollLeft + ((newElementPos.x * sm) - centeredValueX), // takes currentPosition X of scrollPosition from scrollContainer and adds newElementPos X and subtracts the centeredValueX
+        top: scrollContainer.scrollTop + ((newElementPos.y * sm) - centeredValueY), // takes currentPosition Y of scrollPosition from scrollContainer and adds newElementPos Y and subtracts the centeredValueY
+        behavior: 'smooth'
+      })
+    }
+    setTimeout(() => {
+      this.organizationChartService.setSelectedUserId(value);
+    }, 500);
   }
 
   ngOnDestroy(): void {

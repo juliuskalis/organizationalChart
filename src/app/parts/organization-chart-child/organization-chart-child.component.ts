@@ -20,13 +20,14 @@ export class OrganizationChartChildComponent implements OnInit {
   peopleWithChildren: any[] = [];
 
   customStylesClass: string = '';
+  parentBoxPadding: number = 0;
 
   constructor(private organizationChartService: OrganizationChartService) {
-    registerLocaleData( de );
+    registerLocaleData(de);
   }
 
   ngOnInit() {
-    if(this.orga) {
+    if (this.orga) {
       this.orga.forEach(o => { // for every element
         if (o.children?.length === undefined) { // when element has no children
           this.peopleWithoutChildren.push(o);
@@ -39,11 +40,25 @@ export class OrganizationChartChildComponent implements OnInit {
   }
 
   toggleChildren(id: string | null) {
-    const child = this.peopleWithChildren.find(x => x.id === id); // toggles peopleWitchChildren displayChildren
-    if(child) {
-      child.displayChildren = !child.displayChildren;
+    if (id) {
+      const scrollContainer = document.getElementById('scrollContainer');
+      const parentBox = document.getElementById('parentBox-' + id)?.getBoundingClientRect();
+      const box = document.getElementById(id)?.getBoundingClientRect();
+      if (scrollContainer && parentBox && box) {
+        if (this.orga?.find((x) => x.id === id).displayChildren) {
+          this.parentBoxPadding = ((parentBox.width - 24) - box.width) / 2;
+          scrollContainer.scrollTo({left: scrollContainer.scrollLeft - this.parentBoxPadding})
+        } else {
+          scrollContainer.scrollTo({left: scrollContainer.scrollLeft + this.parentBoxPadding})
+        }
+      }
+
+      const child = this.peopleWithChildren.find(x => x.id === id); // toggles peopleWitchChildren displayChildren
+      if (child) {
+        child.displayChildren = !child.displayChildren;
+      }
+      this.organizationChartService.triggerViewChange();
     }
-    this.organizationChartService.triggerViewChange();
   }
 
   getClassesForLayout(val: number): string {

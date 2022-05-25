@@ -8,9 +8,9 @@
   </div>
 
   <div class='people' *ngIf="peopleWithChildren.length > 0">
-    <div *ngFor='let child of peopleWithChildren' class='relative px-4'>
+    <div *ngFor='let child of peopleWithChildren' class='relative px-4' [id]="'parentBox-' + child.id">
       <div class='relative py-8 mx-auto max-w-max'>
-        <div class="parentPerson">
+        <div class="parentPerson" [id]="child.id">
           <app-part-organization-chart-box [user]="child" [selectedUser]="selectedUser"></app-part-organization-chart-box>
         </div>
         <div class='absolute left-1/2 bottom-[-0.75rem] z-10 translate-x-[-50%]' (click)='toggleChildren(child.id)'>
