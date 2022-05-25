@@ -11,19 +11,16 @@
     <div *ngFor='let child of peopleWithChildren' class='relative px-4'>
       <div class='relative py-8 mx-auto max-w-max'>
         <div class="parentPerson">
-          <app-part-organization-chart-box [user]="child"
-                                           [selectedUser]="selectedUser"></app-part-organization-chart-box>
+          <app-part-organization-chart-box [user]="child" [selectedUser]="selectedUser"></app-part-organization-chart-box>
         </div>
         <div class='absolute left-1/2 bottom-[-0.75rem] z-10 translate-x-[-50%]' (click)='toggleChildren(child.id)'>
-          <app-part-organization-chart-toggle-children-button-content
-            [item]="child"></app-part-organization-chart-toggle-children-button-content>
+          <div class="toggleChildrenButton bg-gray-500 text-white">
+            <fa-icon [icon]="['fas', child.displayChildren ? 'minus' : 'plus']" size="xs"></fa-icon>
+          </div>
         </div>
       </div>
-      <app-part-organization-chart-child *ngIf='child.displayChildren' [orga]='child.children' [showName]='showName'
-                                         [showTitle]="showTitle" [clipped]='clipped'
-                                         [selectedUser]='selectedUser'></app-part-organization-chart-child>
-      <app-part-organization-chart-child-length-box *ngIf='!child.displayChildren'
-                                                    [childLength]="child.childrenLength"></app-part-organization-chart-child-length-box>
+      <app-part-organization-chart-child *ngIf='child.displayChildren' [orga]='child.children' [showName]='showName' [showTitle]="showTitle" [clipped]='clipped' [selectedUser]='selectedUser'></app-part-organization-chart-child>
+      <div *ngIf='!child.displayChildren' class="mx-auto bg-gray-200 text-xs rounded-xl w-fit mt-6 px-3 py-2 relative">{{child.childrenLength | number:'':'de'}}</div>
     </div>
   </div>
 </div>

@@ -7,7 +7,6 @@ import { OrganizationChartComponent } from './sites/organization-chart/organizat
 import { OrganizationChartBoxComponent } from './parts/organization-chart-box/organization-chart-box.component';
 import { OrganizationChartChildComponent } from './parts/organization-chart-child/organization-chart-child.component';
 import { OrganizationChartSettingsComponent } from './parts/organization-chart-settings/organization-chart-settings.component';
-import { OrganizationChartToggleChildrenButtonContentComponent } from './parts/organization-chart-toggle-children-button-content/organization-chart-toggle-children-button-content.component';
 import { SwitchComponent } from './parts/switch/switch.component';
 
 import {
@@ -27,7 +26,6 @@ import { DeviceCheckComponent } from './sites/device-check/device-check.componen
 import { SetBodyIdPipe } from './pipes/set-body-id.pipe';
 import { OrganizationChartSettingsOptionsComponent } from './parts/organization-chart-settings-options/organization-chart-settings-options.component';
 import { LayoutTestPageComponent } from './sites/layout-test-page/layout-test-page.component';
-import { OrganizationChartChildLengthBoxComponent } from './parts/organization-chart-child-length-box/organization-chart-child-length-box.component';
 
 @NgModule({
   declarations: [
@@ -36,13 +34,11 @@ import { OrganizationChartChildLengthBoxComponent } from './parts/organization-c
     OrganizationChartBoxComponent,
     OrganizationChartChildComponent,
     OrganizationChartSettingsComponent,
-    OrganizationChartToggleChildrenButtonContentComponent,
     SwitchComponent,
     DeviceCheckComponent,
     SetBodyIdPipe,
     OrganizationChartSettingsOptionsComponent,
-    LayoutTestPageComponent,
-    OrganizationChartChildLengthBoxComponent
+    LayoutTestPageComponent
   ],
   imports: [
     BrowserModule,

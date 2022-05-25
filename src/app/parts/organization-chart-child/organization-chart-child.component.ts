@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {OrganizationChartService} from "../../services/organization-chart.service";
+import {registerLocaleData} from "@angular/common";
+import de from "@angular/common/locales/de";
 
 @Component({
   selector: 'app-part-organization-chart-child',
@@ -19,7 +21,9 @@ export class OrganizationChartChildComponent implements OnInit {
 
   customStylesClass: string = '';
 
-  constructor(private organizationChartService: OrganizationChartService) { }
+  constructor(private organizationChartService: OrganizationChartService) {
+    registerLocaleData( de );
+  }
 
   ngOnInit() {
     if(this.orga) {

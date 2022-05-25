@@ -136,3 +136,14 @@ $space: 2rem;
 .cGridColumns8 {
   grid-template-columns: repeat(8, 1fr);
 }
+
+.toggleChildrenButton {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  border-radius: 1rem;
+  cursor: pointer;
+}
