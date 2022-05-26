@@ -1,0 +1,14 @@
+.openBox {
+  height: calc(60px * 3);
+  transition-property: height;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+}
+
+.closeBox {
+  height: 0;
+  transition-property: height;
+  transition-duration: 300ms;
+  transition-delay: 200ms;
+  transition-timing-function: ease-in-out;
+}

@@ -21,7 +21,6 @@ import {
   faMinus,
   faChevronDown,
   faUpDownLeftRight,
-  faArrowTurnDown,
   faArrowsToEye
 } from "@fortawesome/free-solid-svg-icons";
 import { DeviceCheckComponent } from './sites/device-check/device-check.component';
@@ -66,8 +65,8 @@ export class AppModule {
       faPlus,
       faMinus,
       faUpDownLeftRight,
-      faArrowTurnDown,
-      faArrowsToEye
+      faArrowsToEye,
+      faPlus
     );
   }
 }

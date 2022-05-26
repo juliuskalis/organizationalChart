@@ -6,13 +6,13 @@ import {Subject, takeUntil} from "rxjs";
 import {Router} from "@angular/router";
 // @ts-ignore
 import ScrollBooster from 'scrollbooster';
-import {slideIn, slideOut} from "../../animations/animations";
+import {slideInAndOut} from "../../animations/animations";
 
 @Component({
   selector: 'app-organization-chart',
   templateUrl: './organization-chart.component.html',
   styleUrls: ['./organization-chart.component.scss'],
-  animations: [slideIn, slideOut]
+  animations: [slideInAndOut]
 })
 export class OrganizationChartComponent implements OnInit {
 

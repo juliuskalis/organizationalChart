@@ -1,10 +1,12 @@
 import {Component, Input} from '@angular/core';
 import {OrganizationChartService} from "../../services/organization-chart.service";
+import {loadItemsInAndOut, toggleHeightAndItemFade} from "../../animations/animations";
 
 @Component({
   selector: 'app-part-organization-chart-selected-user-box',
   templateUrl: './organization-chart-selected-user-box.component.html',
-  styleUrls: ['./organization-chart-selected-user-box.component.scss']
+  styleUrls: ['./organization-chart-selected-user-box.component.scss'],
+  animations: [toggleHeightAndItemFade, loadItemsInAndOut]
 })
 export class OrganizationChartSelectedUserBoxComponent {
 
