@@ -1,12 +1,12 @@
 import {
   AUTO_STYLE,
   animate,
-  state,
   style,
   transition,
   trigger,
   query,
-  stagger, keyframes, animation, animateChild
+  stagger,
+  animateChild
 } from '@angular/animations';
 
 export const slideInAndOut =
@@ -21,20 +21,17 @@ export const slideInAndOut =
     ])
   ]);
 
-
-
 export const toggleHeightAndItemFade =
   trigger('toggleHeightAndItemFade', [
     transition(':enter', [
       style({height: '0'}),
-      animate('300ms ease-in-out', style({height: (60 * 3) + 'px'}))
+      animate('300ms ease-in-out', style({height: AUTO_STYLE})),
+      query('@loadItemsInAndOut', animateChild()),
     ]),
     transition(':leave', [
-      style({height: (60 * 3) + 'px'}),
-      animate('300ms 500ms ease-in-out', style({height: '0'}))
-    ]),
-    transition(':enter, :leave', [
       query('@loadItemsInAndOut', animateChild()),
+      style({height: AUTO_STYLE}),
+      animate('300ms ease-in-out', style({height: '0'})),
     ])
   ]);
 
@@ -44,7 +41,7 @@ export const loadItemsInAndOut =
       query('.animationItem', style({transform: 'translateY(-8px)', opacity: 0})),
       query('.animationItem',
         stagger('100ms', [
-          animate('200ms 200ms ease-in-out', style({transform: 'translateY(0)', opacity: 1}))
+          animate('200ms ease-in-out', style({transform: 'translateY(0)', opacity: 1}))
         ])
       )
     ]),
@@ -57,49 +54,3 @@ export const loadItemsInAndOut =
       )
     ])
   ]);
-
-
-
-export const toggleSelectedUserBox =
-  trigger('toggleSelectedUserBox', [
-    state('show', style({
-      height: (42 * 3) + 'px',
-    })),
-    state('hide', style({
-      height: '0',
-    })),
-    transition('show => hide', [animate('300ms ease')])
-  ]);
-
-export const closeSelectedUserBox =
-  trigger('closeSelectedUserBox', [
-    transition(':leave', [
-      style({height: (42 * 3) + 'px'}),
-      animate('300ms ease-in-out', style({height: '0'}))
-    ])
-  ]);
-
-
-// export const transformYAndFadeIn =
-//   trigger('transformYAndFadeIn', [
-//     transition(':enter', [
-//       animate('1000ms 300ms', keyframes([
-//         style({height: '0', opacity: 0, offset: 0}),
-//         style({height: AUTO_STYLE, opacity: 0, offset: 0.5}),
-//         style({height: AUTO_STYLE, opacity: 0, offset: 0.7}),
-//         style({height: AUTO_STYLE, opacity: 1, offset: 1})
-//       ]))
-//     ])
-//   ]);
-
-// export const transformYAndFadeOut =
-//   trigger('transformYAndFadeOut', [
-//     transition(':leave', [
-//       animate('1000ms', keyframes([
-//         style({height: AUTO_STYLE, opacity: 1, offset: 0}),
-//         style({height: AUTO_STYLE, opacity: 0, offset: 0.3}),
-//         style({height: AUTO_STYLE, opacity: 0, offset: 0.5}),
-//         style({height: '0', opacity: 0, offset: 1})
-//       ]))
-//     ])
-//   ]);

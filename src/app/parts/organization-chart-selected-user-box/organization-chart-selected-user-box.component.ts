@@ -13,11 +13,19 @@ export class OrganizationChartSelectedUserBoxComponent {
   @Input() user: any;
 
   displayContent: boolean = false;
+  displayContentBlocked: boolean = false;
 
   constructor(private organizationChartService: OrganizationChartService) {}
 
   scrollToId(val: string): void {
     this.organizationChartService.scrollToUserId(val);
+  }
+
+  toggleDisplayContent() {
+    if (!this.displayContentBlocked) {
+      this.displayContent = !this.displayContent;
+    }
+    this.displayContentBlocked = true;
   }
 
 }

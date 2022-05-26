@@ -18,31 +18,13 @@
       <div
         class="w-12 h-12 bg-[#6495ED] text-white rounded-full flex justify-center items-center text-2xl cursor-pointer duration-200"
         [class.rotate-45]="displayContent"
-        (click)="displayContent = !displayContent">
+        (click)="toggleDisplayContent()">
         <fa-icon [icon]="['fas', 'plus']" size="1x"></fa-icon>
       </div>
     </div>
   </div>
-
-<!--  <div *ngIf="displayContent" @toggleHeightAndItemFade class="relative">-->
-<!--    <div @loadItemsInAndOut>-->
-<!--      <div class="p-4 max-w-max animationItem">-->
-<!--        <div class="text-gray-500">Group:</div>-->
-<!--        {{user.department}}-->
-<!--      </div>-->
-<!--      <div class="p-4 max-w-max animationItem">-->
-<!--        <div class="text-gray-500">E-Mail address:</div>-->
-<!--        {{user.mail}}-->
-<!--      </div>-->
-<!--      <div class="p-4 max-w-max animationItem">-->
-<!--        <div class="text-gray-500">Phone number:</div>-->
-<!--        {{user.tel}}-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-
-  <div [class.openBox]="displayContent" [class.closeBox]="!displayContent" class="relative">
-    <div *ngIf="displayContent" @loadItemsInAndOut>
+  <div *ngIf="displayContent" @toggleHeightAndItemFade (@toggleHeightAndItemFade.done)="displayContentBlocked = false" class="relative">
+    <div @loadItemsInAndOut>
       <div class="p-4 max-w-max animationItem">
         <div class="text-gray-500">Group:</div>
         {{user.department}}
