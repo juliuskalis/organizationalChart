@@ -12,13 +12,18 @@ import {
 export const slideInAndOut =
   trigger('slideInAndOut', [
     transition(':enter', [
-      style({opacity: 0, transform: 'translate(-50%, -120px)'}),
-      animate('300ms ease-in-out', style({opacity: 1, transform: 'translate(-50%, 0)'}))
-    ]),
+      style({transform: 'translate(-50%, -120px)'}),
+      // opacity: 0,
+  animate('200ms ease-out', style({transform: 'translate(-50%, 0)'}))
+      // opacity: 1,
+]),
     transition(':leave', [
-      style({opacity: 1, transform: 'translate(-50%, 0)'}),
-      animate('300ms ease-in-out', style({opacity: 0, transform: 'translate(-50%, -120px)'}))
-    ])
+      query('@toggleHeightAndItemFade', animateChild(), { optional: true }),
+      style({transform: 'translate(-50%, 0)'}),
+      // opacity: 1,
+  animate('200ms ease-in', style({transform: 'translate(-50%, -120px)'}))
+      // opacity: 0,
+])
   ]);
 
 export const toggleHeightAndItemFade =
