@@ -19,7 +19,7 @@
           </div>
         </div>
       </div>
-      <app-part-organization-chart-child *ngIf='child.displayChildren' [orga]='child.children' [showName]='showName' [showTitle]="showTitle" [clipped]='clipped' [selectedUser]='selectedUser'></app-part-organization-chart-child>
+      <app-part-organization-chart-child *ngIf='child.displayChildren' [orga]='child.children' [showName]='showName' [showTitle]="showTitle" [clipped]='clipped' [selectedUser]='selectedUser' [scaleMultiplier]="scaleMultiplier"></app-part-organization-chart-child>
       <div *ngIf='!child.displayChildren' class="mx-auto bg-gray-200 text-xs rounded-xl w-fit mt-6 px-3 py-2 relative">{{child.childrenLength | number:'':'de'}}</div>
     </div>
   </div>

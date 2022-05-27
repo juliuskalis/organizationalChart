@@ -15,6 +15,7 @@ export class OrganizationChartChildComponent implements OnInit {
   @Input() showTitle: boolean | undefined;
   @Input() clipped: string | undefined;
   @Input() selectedUser: string | undefined;
+  @Input() scaleMultiplier: number = 100;
 
   peopleWithoutChildren: any[] = [];
   peopleWithChildren: any[] = [];
@@ -46,7 +47,7 @@ export class OrganizationChartChildComponent implements OnInit {
       const box = document.getElementById(id)?.getBoundingClientRect();
       if (scrollContainer && parentBox && box) {
         if (this.orga?.find((x) => x.id === id).displayChildren) {
-          this.parentBoxPadding = ((parentBox.width - 24) - box.width) / 2;
+          this.parentBoxPadding = (((parentBox.width - 24) - box.width) / 2) * (this.scaleMultiplier / 100);
           scrollContainer.scrollTo({left: scrollContainer.scrollLeft - this.parentBoxPadding})
         } else {
           scrollContainer.scrollTo({left: scrollContainer.scrollLeft + this.parentBoxPadding})
