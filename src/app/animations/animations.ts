@@ -12,39 +12,39 @@ import {
 export const slideInAndOut =
   trigger('slideInAndOut', [
     transition(':enter', [
-      style({transform: 'translate(-50%, -120px)'}),
-      animate('200ms ease-out', style({transform: 'translate(-50%, 0)'}))
+      style({transform: 'translate(-50%, -120px)', backdropFilter: 'blur(8px)'}),
+      animate('200ms ease-out', style({transform: 'translate(-50%, 0)', backdropFilter: 'blur(8px)'}))
     ]),
     transition(':leave', [
       query('@toggleHeightAndItemFade', animateChild(), {optional: true}),
-      style({transform: 'translate(-50%, 0)'}),
-      animate('200ms ease-in', style({transform: 'translate(-50%, -120px)'}))
+      style({transform: 'translate(-50%, 0)', backdropFilter: 'blur(8px)'}),
+      animate('200ms ease-in', style({transform: 'translate(-50%, -120px)', backdropFilter: 'blur(8px)'}))
     ])
   ]);
 
 export const slideInAndOutReversed =
   trigger('slideInAndOutReversed', [
     transition(':enter', [
-      style({transform: 'translate(-50%, 120px)'}),
-      animate('200ms ease-out', style({transform: 'translate(-50%, 0)'}))
+      style({transform: 'translate(-50%, 120px)', backdropFilter: 'blur(8px)'}),
+      animate('200ms ease-out', style({transform: 'translate(-50%, 0)', backdropFilter: 'blur(8px)'}))
     ]),
     transition(':leave', [
       query('@toggleHeightAndItemFade', animateChild(), {optional: true}),
-      style({transform: 'translate(-50%, 0)'}),
-      animate('200ms ease-in', style({transform: 'translate(-50%, 120px)'}))
+      style({transform: 'translate(-50%, 0)', backdropFilter: 'blur(8px)'}),
+      animate('200ms ease-in', style({transform: 'translate(-50%, 120px)', backdropFilter: 'blur(8px)'}))
     ])
   ]);
 
 export const slideInAndOutPhone =
   trigger('slideInAndOutPhone', [
     transition(':enter', [
-      style({transform: 'translateY(-120px)'}),
-      animate('200ms ease-out', style({transform: 'translateY(0)'}))
+      style({transform: 'translateY(-120px)', backdropFilter: 'blur(8px)'}),
+      animate('200ms ease-out', style({transform: 'translateY(0)', backdropFilter: 'blur(8px)'}))
     ]),
     transition(':leave', [
       query('@toggleHeightAndItemFade', animateChild(), {optional: true}),
-      style({transform: 'translateY(0)'}),
-      animate('200ms ease-in', style({transform: 'translateY(-120px)'}))
+      style({transform: 'translateY(0)', backdropFilter: 'blur(8px)'}),
+      animate('200ms ease-in', style({transform: 'translateY(-120px)', backdropFilter: 'blur(8px)'}))
     ])
   ]);
 
