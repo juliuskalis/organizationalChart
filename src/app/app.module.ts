@@ -30,6 +30,7 @@ import { LayoutTestPageComponent } from './sites/layout-test-page/layout-test-pa
 import {FormsModule} from "@angular/forms";
 import { OrganizationChartSelectedUserBoxComponent } from './parts/organization-chart-selected-user-box/organization-chart-selected-user-box.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { OrganizationChartSelectedUserBoxContentComponent } from './parts/organization-chart-selected-user-box-content/organization-chart-selected-user-box-content.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     SetBodyIdPipe,
     OrganizationChartSettingsOptionsComponent,
     LayoutTestPageComponent,
-    OrganizationChartSelectedUserBoxComponent
+    OrganizationChartSelectedUserBoxComponent,
+    OrganizationChartSelectedUserBoxContentComponent
   ],
     imports: [
         BrowserModule,

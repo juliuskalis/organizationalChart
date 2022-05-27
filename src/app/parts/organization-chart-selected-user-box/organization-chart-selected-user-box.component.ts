@@ -1,50 +1,31 @@
-import {Component, Input} from '@angular/core';
-import {OrganizationChartService} from "../../services/organization-chart.service";
-import {loadItemsInAndOut, toggleHeightAndItemFade} from "../../animations/animations";
+import {Component, Input, OnInit} from '@angular/core';
+import {slideInAndOut, slideInAndOutPhone, slideInAndOutReversed} from "../../animations/animations";
 
 @Component({
   selector: 'app-part-organization-chart-selected-user-box',
   templateUrl: './organization-chart-selected-user-box.component.html',
   styleUrls: ['./organization-chart-selected-user-box.component.scss'],
-  animations: [toggleHeightAndItemFade, loadItemsInAndOut]
+  animations: [slideInAndOut, slideInAndOutReversed, slideInAndOutPhone]
 })
-export class OrganizationChartSelectedUserBoxComponent {
+export class OrganizationChartSelectedUserBoxComponent implements OnInit{
 
   @Input() user: any;
+  @Input() layoutType: string = '';
+  @Input() selectedUserId: string | undefined;
+  @Input() selectedUser: any;
 
-  displayContent: boolean = false;
-  displayContentAnimation: boolean = false;
+  selectedUserBoxLayout: string = 'default';
 
-  constructor(private organizationChartService: OrganizationChartService) {}
-
-  scrollToId(val: string): void {
-    this.organizationChartService.scrollToUserId(val);
+  ngOnInit(): void {
+    this.onResize();
   }
 
-  toggleDisplayContent() {
-    if (!this.displayContentAnimation) {
-      this.displayContent = !this.displayContent;
-    }
-    this.displayContentAnimation = true;
-  }
-
-  onAnimationEnd() {
-    this.displayContentAnimation = false;
-    this.addsVerticalScrollbarIfNecessary('selectedUserBoxContent', 72);
-  }
-
-  addsVerticalScrollbarIfNecessary(id: string, margin: number = 0): void {
-    const element = document.getElementById(id);
-    if (element) {
-      const windowHeight = window.innerHeight;
-      let boxHeight = element.getBoundingClientRect().height + margin;
-      if (windowHeight < boxHeight) {
-        element.style.height = windowHeight - margin + 'px';
-        element.style.overflow = 'auto';
-      } else {
-        element.style.height = 'auto';
-        element.style.overflow = 'hidden';
-      }
+  onResize() {
+    const x = window.innerWidth;
+    if (x >= 1280) {
+      this.selectedUserBoxLayout = 'default';
+    } else {
+      this.selectedUserBoxLayout = 'reversed';
     }
   }
 
