@@ -15,6 +15,7 @@
 </div>
 
 <app-part-organization-chart-settings [layoutType]="layoutType"></app-part-organization-chart-settings>
+<app-part-organization-chart-selected-user-box [user]="selectedUser" [selectedUserId]="selectedUserId" [layoutType]="layoutType"></app-part-organization-chart-selected-user-box>
 
 <!--<div class="fixed right-4 top-4">-->
 <!--  <div class="bg-white">-->
@@ -23,19 +24,3 @@
 <!--  </div>-->
 <!--</div>-->
 
-<ng-container (window:resize)="onResize()">
-  <ng-container *ngIf="selectedUserBoxLayout === 'default'">
-    <div *ngIf="selectedUserId" @slideInAndOut class="fixed top-12 left-1/2 translate-x-[-200px] max-w-max z-10 select-none">
-      <app-part-organization-chart-selected-user-box [user]="selectedUser"></app-part-organization-chart-selected-user-box>
-    </div>
-  </ng-container>
-  <ng-container *ngIf="selectedUserBoxLayout === 'small'">
-    <div *ngIf="selectedUserId" @slideInAndOutRight class="fixed top-12 right-12 max-w-max z-10 select-none">
-      <app-part-organization-chart-selected-user-box [user]="selectedUser"></app-part-organization-chart-selected-user-box>
-    </div>
-  </ng-container>
-</ng-container>
-
-<!--<div *ngIf="selectedUserId" @slideInAndOutRight class="fixed top-12 right-12 max-w-max z-10 select-none">-->
-<!--  <app-part-organization-chart-selected-user-box [user]="selectedUser"></app-part-organization-chart-selected-user-box>-->
-<!--</div>-->

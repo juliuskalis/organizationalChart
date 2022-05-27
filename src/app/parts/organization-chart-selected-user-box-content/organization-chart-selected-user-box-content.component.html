@@ -1,0 +1,42 @@
+<div id="selectedUserBoxContent" class="bg-white/80 backdrop-blur rounded-xl overflow-hidden">
+  <div class="border-t-8 border-t-[#6495ED] w-[400px] max-w-full h-32 px-4 flex justify-between items-center">
+    <div class="flex gap-x-4 items-center">
+      <div class="bg-gray-100 w-20 h-20 rounded-full uppercase text-3xl flex justify-center items-center">
+        {{user.firstAndLastLetter}}
+      </div>
+      <div>
+        <div>{{user.firstname}} {{user.lastname}}</div>
+        <div class="text-gray-400">{{user.title}}</div>
+      </div>
+    </div>
+    <div class="flex gap-x-4">
+      <div
+        class="w-12 h-12 bg-[#6495ED] text-white rounded-full flex justify-center items-center text-2xl cursor-pointer"
+        (click)="scrollToId(user.id)">
+        <fa-icon [icon]="['fas', 'arrows-to-eye']" size="1x"></fa-icon>
+      </div>
+      <div
+        class="w-12 h-12 bg-[#6495ED] text-white rounded-full flex justify-center items-center text-2xl cursor-pointer duration-200"
+        [class.rotate-45]="displayContent"
+        (click)="toggleDisplayContent()">
+        <fa-icon [icon]="['fas', 'plus']" size="1x"></fa-icon>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="displayContent" @toggleHeightAndItemFade (@toggleHeightAndItemFade.done)="onAnimationEnd()" class="relative">
+    <div @loadItemsInAndOut>
+      <div class="p-4 max-w-max animationItem">
+        <div class="text-gray-500">Group:</div>
+        {{user.department}}
+      </div>
+      <div class="p-4 max-w-max animationItem">
+        <div class="text-gray-500">E-Mail address:</div>
+        {{user.mail}}
+      </div>
+      <div class="p-4 max-w-max animationItem">
+        <div class="text-gray-500">Phone number:</div>
+        {{user.tel}}
+      </div>
+    </div>
+  </div>
+</div>

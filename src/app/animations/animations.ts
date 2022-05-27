@@ -22,8 +22,21 @@ export const slideInAndOut =
     ])
   ]);
 
-export const slideInAndOutRight =
-  trigger('slideInAndOutRight', [
+export const slideInAndOutReversed =
+  trigger('slideInAndOutReversed', [
+    transition(':enter', [
+      style({transform: 'translate(-50%, 120px)'}),
+      animate('200ms ease-out', style({transform: 'translate(-50%, 0)'}))
+    ]),
+    transition(':leave', [
+      query('@toggleHeightAndItemFade', animateChild(), {optional: true}),
+      style({transform: 'translate(-50%, 0)'}),
+      animate('200ms ease-in', style({transform: 'translate(-50%, 120px)'}))
+    ])
+  ]);
+
+export const slideInAndOutPhone =
+  trigger('slideInAndOutPhone', [
     transition(':enter', [
       style({transform: 'translateY(-120px)'}),
       animate('200ms ease-out', style({transform: 'translateY(0)'}))

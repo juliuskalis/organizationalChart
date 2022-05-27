@@ -16,6 +16,7 @@ export class OrganizationChartSettingsOptionsComponent implements OnInit, OnDest
 
   @Input() displayMenu: boolean = true;
   @Input() layoutType: string = 'pc';
+
   height: number = 500;
   innerHeight: number = window.innerHeight;
 
