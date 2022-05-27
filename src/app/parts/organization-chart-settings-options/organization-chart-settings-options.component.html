@@ -45,6 +45,17 @@
           </div>
         </div>
       </div>
+
+      <div class="flex justify-between items-center">
+        <div class="flex items-center">
+          <fa-icon [icon]="['fas', 'display']" class="text-2xl mr-4"></fa-icon>
+          Present chart
+        </div>
+        <div (click)="enablePresentationMode()" class="cursor-pointer bg-gray-200 hover:bg-gray-300 p-3 rounded-full duration-100">
+          start presentation mode
+        </div>
+      </div>
+
     </div>
 
   </div>

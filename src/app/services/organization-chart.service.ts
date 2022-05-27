@@ -14,6 +14,7 @@ export class OrganizationChartService {
   scaleMultiplier: BehaviorSubject<number> = new BehaviorSubject<number>(100);
   startFrom: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   scrollOnPC: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  presentationMode: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor() {
     this.checkLocalStorage();
@@ -62,6 +63,10 @@ export class OrganizationChartService {
   setScrollOnPC(val: boolean) {
     this.scrollOnPC.next(val);
     localStorage.setItem('scrollOnPC', JSON.stringify(val));
+  }
+
+  setPresentationMode(val: boolean) {
+    this.presentationMode.next(val);
   }
 
 }

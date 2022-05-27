@@ -1,19 +1,26 @@
 <ng-container *ngIf="layoutType === 'pc'">
   <ng-container (window:resize)="onResize()">
-    <ng-container *ngIf="selectedUserBoxLayout === 'default'">
-      <div *ngIf="selectedUserId" @slideInAndOut class="fixed top-12 left-1/2 translate-x-[-200px] max-w-max z-10 select-none">
-        <app-part-organization-chart-selected-user-box-content [user]="user"></app-part-organization-chart-selected-user-box-content>
-      </div>
+    <ng-container *ngIf="!presentationMode">
+      <ng-container *ngIf="selectedUserBoxLayout === 'default'">
+        <div *ngIf="selectedUserId" @slideInAndOut class="fixed top-12 left-1/2 translate-x-[-200px] max-w-max z-10 select-none">
+          <app-part-organization-chart-selected-user-box-content [user]="user"></app-part-organization-chart-selected-user-box-content>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="selectedUserBoxLayout === 'reversed'">
+        <div *ngIf="selectedUserId" @slideInAndOutReversed class="fixed bottom-12 left-1/2 translate-x-[-200px] max-w-max z-10 select-none">
+          <app-part-organization-chart-selected-user-box-content [user]="user"></app-part-organization-chart-selected-user-box-content>
+        </div>
+      </ng-container>
     </ng-container>
-    <ng-container *ngIf="selectedUserBoxLayout === 'reversed'">
-      <div *ngIf="selectedUserId" @slideInAndOutReversed class="fixed bottom-12 left-1/2 translate-x-[-200px] max-w-max z-10 select-none">
-        <app-part-organization-chart-selected-user-box-content [user]="user"></app-part-organization-chart-selected-user-box-content>
-      </div>
-    </ng-container>
+  </ng-container>
+  <ng-container *ngIf="presentationMode">
+    <div *ngIf="selectedUserId" @slideInAndOut class="fixed top-12 left-1/2 translate-x-[-200px] max-w-max z-10 select-none">
+      <app-part-organization-chart-selected-user-box-content [user]="user"></app-part-organization-chart-selected-user-box-content>
+    </div>
   </ng-container>
 </ng-container>
 <ng-container *ngIf="layoutType === 'phone'">
-    <div *ngIf="selectedUserId" @slideInAndOutPhone class="fixed top-4 left-4 z-10 select-none" style="max-width: calc(100vw - 2rem)">
-      <app-part-organization-chart-selected-user-box-content [user]="user"></app-part-organization-chart-selected-user-box-content>
-    </div>
+  <div *ngIf="selectedUserId" @slideInAndOutPhone class="fixed top-4 left-4 z-10 select-none" style="max-width: calc(100vw - 2rem)">
+    <app-part-organization-chart-selected-user-box-content [user]="user"></app-part-organization-chart-selected-user-box-content>
+  </div>
 </ng-container>

@@ -35,6 +35,7 @@ export class OrganizationChartComponent implements OnInit {
 
   layoutType: string = 'pc';
   scrollOnPC: boolean = false;
+  presentationMode: boolean = false;
 
   scrollBooster: any;
   scrollBoosterInitialized: boolean = false;
@@ -146,7 +147,9 @@ export class OrganizationChartComponent implements OnInit {
         this.scrollToId(val);
       }
     });
-
+    this.organizationChartService.presentationMode.pipe(takeUntil(this.destroy)).subscribe((mode: boolean) => {
+      this.presentationMode = mode;
+    });
   }
 
   loadOrganigramm() {

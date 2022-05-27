@@ -81,3 +81,28 @@ export const loadItemsInAndOut =
       )
     ])
   ]);
+
+export const transformInOut =
+  trigger('transformInOut', [
+    transition(':enter', [
+      style({transform: 'scale(.5) translate(-3rem, -3rem)', opacity: 0}),
+      animate('200ms ease-out', style({transform: 'scale(1) translate(0, 0)', opacity: 1}))
+    ]),
+    transition(':leave', [
+      // query('@toggleHeightAndItemFade', animateChild(), {optional: true}),
+      style({transform: 'scale(1) translate(0, 0)', opacity: 1}),
+      animate('200ms ease-in', style({transform: 'scale(.5) translate(-3rem, -3rem)', opacity: 0}))
+    ])
+  ]);
+
+export const scale =
+  trigger('scale', [
+    transition(':enter', [
+      style({transform: 'scale(0)'}),
+      animate('200ms ease-in-out', style({transform: 'scale(1)'}))
+    ]),
+    transition(':leave', [
+      style({transform: 'scale(1)'}),
+      animate('200ms ease-in-out', style({transform: 'scale(0)'}))
+    ])
+  ]);

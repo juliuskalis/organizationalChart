@@ -98,6 +98,10 @@ export class OrganizationChartSettingsOptionsComponent implements OnInit, OnDest
     }
   }
 
+  enablePresentationMode() {
+    this.organizationChartService.setPresentationMode(true);
+  }
+
   ngOnDestroy(): void {
     this.destroy.next(true);
     this.destroy.complete();

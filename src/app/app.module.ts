@@ -21,7 +21,8 @@ import {
   faMinus,
   faChevronDown,
   faUpDownLeftRight,
-  faArrowsToEye
+  faArrowsToEye,
+  faDisplay, faXmark
 } from "@fortawesome/free-solid-svg-icons";
 import { DeviceCheckComponent } from './sites/device-check/device-check.component';
 import { SetBodyIdPipe } from './pipes/set-body-id.pipe';
@@ -68,7 +69,9 @@ export class AppModule {
       faMinus,
       faUpDownLeftRight,
       faArrowsToEye,
-      faPlus
+      faPlus,
+      faDisplay,
+      faXmark
     );
   }
 }

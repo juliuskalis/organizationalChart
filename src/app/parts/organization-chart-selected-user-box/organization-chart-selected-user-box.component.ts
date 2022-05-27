@@ -13,6 +13,7 @@ export class OrganizationChartSelectedUserBoxComponent implements OnInit{
   @Input() layoutType: string = '';
   @Input() selectedUserId: string | undefined;
   @Input() selectedUser: any;
+  @Input() presentationMode: boolean = false;
 
   selectedUserBoxLayout: string = 'default';
 

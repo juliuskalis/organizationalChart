@@ -1,4 +1,4 @@
-<div class="fixed z-30" [ngClass]="layoutType === 'pc' ? 'top-12 left-12' : 'bottom-4 left-4'">
+<div *ngIf="!presentationMode" [@.disabled]="layoutType === 'phone'" @transformInOut class="fixed z-30 origin-top-left" [ngClass]="layoutType === 'pc' ? 'top-12 left-12' : 'bottom-4 left-4'">
   <div class="overflow-hidden rounded-xl backdrop-blur select-none" [ngClass]="layoutType === 'pc' ? 'customResponsiveWidthForPC' : 'customWidthForPhone'">
 
     <app-part-organization-chart-settings-options *ngIf="layoutType === 'phone'" [displayMenu]="displayMenu" [layoutType]="layoutType"></app-part-organization-chart-settings-options>
@@ -9,7 +9,7 @@
         <div class="text-xl">Settings</div>
         <div class="bg-gray-200 w-16 h-16 rounded-full hover:bg-gray-300 duration-100" (click)="toggleMenu()" [ngClass]="layoutType === 'pc' ? 'cursor-pointer' : ''">
           <div class="w-16 h-16 flex justify-center items-center duration-300 text-gray-700 text-xl pointer-events-none"
-            [ngClass]="displayMenu ? '' : layoutType === 'pc' ? 'rotate-[-180deg]' : 'rotate-180'">
+               [ngClass]="displayMenu ? '' : layoutType === 'pc' ? 'rotate-[-180deg]' : 'rotate-180'">
             <fa-icon [icon]="['fas', 'chevron-up']" *ngIf="layoutType === 'pc'"></fa-icon>
             <fa-icon [icon]="['fas', 'chevron-down']" *ngIf="layoutType === 'phone'"></fa-icon>
           </div>
@@ -20,4 +20,14 @@
     <app-part-organization-chart-settings-options *ngIf="layoutType === 'pc'" [displayMenu]="displayMenu" [layoutType]="layoutType"></app-part-organization-chart-settings-options>
 
   </div>
+</div>
+
+<div *ngIf="presentationMode && layoutType === 'pc'" class="fixed top-0 left-0 z-30 w-20 h-20 rounded-br-full" (mouseover)="disablePresentationModeButton = true" (mouseleave)="disablePresentationModeButton = false">
+  <div *ngIf="disablePresentationModeButton" @scale class="w-20 h-20 bg-gray-200 hover:bg-gray-300 duration-100 rounded-br-full pt-5 pl-6 cursor-pointer origin-top-left" (click)="disablePresentationMode()">
+    <fa-icon [icon]="['fas', 'xmark']" size="lg"></fa-icon>
+  </div>
+</div>
+
+<div *ngIf="presentationMode && layoutType === 'phone'" class="fixed top-0 left-0 z-30 w-12 h-12 bg-gray-200 rounded-br-full pt-2 pl-3" (click)="disablePresentationMode()">
+  <fa-icon [icon]="['fas', 'xmark']"></fa-icon>
 </div>
