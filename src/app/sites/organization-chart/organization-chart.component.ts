@@ -117,6 +117,7 @@ export class OrganizationChartComponent implements OnInit {
       this.updateScrollBooster();
     });
     this.organizationChartService.scaleMultiplier.pipe(takeUntil(this.destroy)).subscribe((val: number) => {
+      this.scaleMultiplier < val ? this.calculateNewPosition((val - this.scaleMultiplier) / 100) : this.calculateNewPosition((val - this.scaleMultiplier) / 100);
       this.scaleMultiplier = val;
       this.updateScrollBooster();
     });
@@ -220,6 +221,14 @@ export class OrganizationChartComponent implements OnInit {
       setTimeout(() => {
         this.organizationChartService.setSelectedUserId(value);
       }, 500);
+    }
+  }
+
+  calculateNewPosition(val: number) {
+    const scrollContainer = document.getElementById('scrollContainer');
+    if (scrollContainer) {
+      scrollContainer.scrollLeft = scrollContainer.scrollLeft * (1 + val);
+      scrollContainer.scrollTop = scrollContainer.scrollTop * (1 + val);
     }
   }
 
