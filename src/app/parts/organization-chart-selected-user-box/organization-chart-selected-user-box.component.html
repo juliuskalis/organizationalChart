@@ -1,4 +1,4 @@
-<div class="bg-white/80 backdrop-blur rounded-xl overflow-hidden">
+<div id="selectedUserBoxContent" class="bg-white/80 backdrop-blur rounded-xl overflow-hidden">
   <div class="border-t-8 border-t-[#6495ED] w-[300px] md:w-[400px] h-32 px-4 flex justify-between items-center">
     <div class="flex gap-x-4 items-center">
       <div class="bg-gray-100 w-20 h-20 rounded-full uppercase text-3xl flex justify-center items-center">
@@ -23,7 +23,7 @@
       </div>
     </div>
   </div>
-  <div *ngIf="displayContent" @toggleHeightAndItemFade (@toggleHeightAndItemFade.done)="displayContentBlocked = false" class="relative">
+  <div *ngIf="displayContent" @toggleHeightAndItemFade (@toggleHeightAndItemFade.done)="onAnimationEnd()" class="relative">
     <div @loadItemsInAndOut>
       <div class="p-4 max-w-max animationItem">
         <div class="text-gray-500">Group:</div>

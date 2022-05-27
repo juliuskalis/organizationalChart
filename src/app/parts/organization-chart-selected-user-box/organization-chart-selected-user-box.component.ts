@@ -13,7 +13,7 @@ export class OrganizationChartSelectedUserBoxComponent {
   @Input() user: any;
 
   displayContent: boolean = false;
-  displayContentBlocked: boolean = false;
+  displayContentAnimation: boolean = false;
 
   constructor(private organizationChartService: OrganizationChartService) {}
 
@@ -22,10 +22,30 @@ export class OrganizationChartSelectedUserBoxComponent {
   }
 
   toggleDisplayContent() {
-    if (!this.displayContentBlocked) {
+    if (!this.displayContentAnimation) {
       this.displayContent = !this.displayContent;
     }
-    this.displayContentBlocked = true;
+    this.displayContentAnimation = true;
+  }
+
+  onAnimationEnd() {
+    this.displayContentAnimation = false;
+    this.addsVerticalScrollbarIfNecessary('selectedUserBoxContent', 36);
+  }
+
+  addsVerticalScrollbarIfNecessary(id: string, margin: number = 0): void {
+    const element = document.getElementById(id);
+    if (element) {
+      const windowHeight = window.innerHeight;
+      let boxHeight = element.getBoundingClientRect().height + margin;
+      if (windowHeight < boxHeight) {
+        element.style.height = windowHeight - margin + 'px';
+        element.style.overflow = 'auto';
+      } else {
+        element.style.height = 'auto';
+        element.style.overflow = 'hidden';
+      }
+    }
   }
 
 }

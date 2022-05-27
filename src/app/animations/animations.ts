@@ -39,7 +39,7 @@ export const toggleHeightAndItemFade =
 export const loadItemsInAndOut =
   trigger('loadItemsInAndOut', [
     transition(':enter', [
-      query('.animationItem', style({transform: 'translateY(-8px)', opacity: 0})),
+      query('.animationItem', style({transform: 'translateY(8px)', opacity: 0})),
       query('.animationItem',
         stagger('100ms', [
           animate('200ms ease-in-out', style({transform: 'translateY(0)', opacity: 1}))
