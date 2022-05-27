@@ -1,12 +1,12 @@
-<div id="selectedUserBoxContent" class="bg-white/80 backdrop-blur rounded-xl overflow-hidden">
-  <div class="border-t-8 border-t-[#6495ED] w-[400px] max-w-full h-32 px-4 flex justify-between items-center">
-    <div class="flex gap-x-4 items-center">
+<div id="selectedUserBoxContent" class="bg-white/80 backdrop-blur rounded-xl overflow-hidden w-[400px] max-w-full">
+  <div class="border-t-8 border-t-[#6495ED] h-32 px-4 flex justify-between items-center gap-x-4">
+    <div class="flex gap-x-4 items-center" style="max-width: calc(100% - 8rem)">
       <div class="bg-gray-100 w-20 h-20 rounded-full uppercase text-3xl flex justify-center items-center">
         {{user.firstAndLastLetter}}
       </div>
-      <div>
-        <div>{{user.firstname}} {{user.lastname}}</div>
-        <div class="text-gray-400">{{user.title}}</div>
+      <div style="max-width: calc(100% - 6rem)">
+        <div class="truncate">{{user.firstname}} {{user.lastname}}</div>
+        <div class="text-gray-400 truncate">{{user.title}}</div>
       </div>
     </div>
     <div class="flex gap-x-4">
@@ -23,19 +23,19 @@
       </div>
     </div>
   </div>
-  <div *ngIf="displayContent" @toggleHeightAndItemFade (@toggleHeightAndItemFade.done)="onAnimationEnd()" class="relative">
+  <div *ngIf="displayContent" @toggleHeightAndItemFade (@toggleHeightAndItemFade.done)="onAnimationEnd()">
     <div @loadItemsInAndOut>
-      <div class="p-4 max-w-max animationItem">
+      <div class="p-4 animationItem">
         <div class="text-gray-500">Group:</div>
-        {{user.department}}
+        <div class="truncate">{{user.department}}</div>
       </div>
-      <div class="p-4 max-w-max animationItem">
+      <div class="p-4 animationItem">
         <div class="text-gray-500">E-Mail address:</div>
-        {{user.mail}}
+        <div class="truncate">{{user.mail}}</div>
       </div>
-      <div class="p-4 max-w-max animationItem">
+      <div class="p-4 animationItem">
         <div class="text-gray-500">Phone number:</div>
-        {{user.tel}}
+        <div class="truncate">{{user.tel}}</div>
       </div>
     </div>
   </div>
