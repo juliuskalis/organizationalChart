@@ -22,6 +22,19 @@ export const slideInAndOut =
     ])
   ]);
 
+export const slideInAndOutRight =
+  trigger('slideInAndOutRight', [
+    transition(':enter', [
+      style({transform: 'translateY(-120px)'}),
+      animate('200ms ease-out', style({transform: 'translateY(0)'}))
+    ]),
+    transition(':leave', [
+      query('@toggleHeightAndItemFade', animateChild(), {optional: true}),
+      style({transform: 'translateY(0)'}),
+      animate('200ms ease-in', style({transform: 'translateY(-120px)'}))
+    ])
+  ]);
+
 export const toggleHeightAndItemFade =
   trigger('toggleHeightAndItemFade', [
     transition(':enter', [

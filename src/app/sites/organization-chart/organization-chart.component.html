@@ -23,6 +23,19 @@
 <!--  </div>-->
 <!--</div>-->
 
-<div id="selectedUserBox" *ngIf="selectedUserId" @slideInAndOut class="fixed top-12 left-1/2 translate-x-[-150px] md:translate-x-[-200px] max-w-max z-10 select-none">
-  <app-part-organization-chart-selected-user-box [user]="selectedUser"></app-part-organization-chart-selected-user-box>
-</div>
+<ng-container (window:resize)="onResize()">
+  <ng-container *ngIf="selectedUserBoxLayout === 'default'">
+    <div *ngIf="selectedUserId" @slideInAndOut class="fixed top-12 left-1/2 translate-x-[-200px] max-w-max z-10 select-none">
+      <app-part-organization-chart-selected-user-box [user]="selectedUser"></app-part-organization-chart-selected-user-box>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="selectedUserBoxLayout === 'small'">
+    <div *ngIf="selectedUserId" @slideInAndOutRight class="fixed top-12 right-12 max-w-max z-10 select-none">
+      <app-part-organization-chart-selected-user-box [user]="selectedUser"></app-part-organization-chart-selected-user-box>
+    </div>
+  </ng-container>
+</ng-container>
+
+<!--<div *ngIf="selectedUserId" @slideInAndOutRight class="fixed top-12 right-12 max-w-max z-10 select-none">-->
+<!--  <app-part-organization-chart-selected-user-box [user]="selectedUser"></app-part-organization-chart-selected-user-box>-->
+<!--</div>-->

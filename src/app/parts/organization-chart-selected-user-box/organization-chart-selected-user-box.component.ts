@@ -30,7 +30,7 @@ export class OrganizationChartSelectedUserBoxComponent {
 
   onAnimationEnd() {
     this.displayContentAnimation = false;
-    this.addsVerticalScrollbarIfNecessary('selectedUserBoxContent', 36);
+    this.addsVerticalScrollbarIfNecessary('selectedUserBoxContent', 72);
   }
 
   addsVerticalScrollbarIfNecessary(id: string, margin: number = 0): void {

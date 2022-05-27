@@ -6,13 +6,13 @@ import {Subject, takeUntil} from "rxjs";
 import {Router} from "@angular/router";
 // @ts-ignore
 import ScrollBooster from 'scrollbooster';
-import {slideInAndOut} from "../../animations/animations";
+import {slideInAndOut, slideInAndOutRight} from "../../animations/animations";
 
 @Component({
   selector: 'app-organization-chart',
   templateUrl: './organization-chart.component.html',
   styleUrls: ['./organization-chart.component.scss'],
-  animations: [slideInAndOut]
+  animations: [slideInAndOut, slideInAndOutRight]
 })
 export class OrganizationChartComponent implements OnInit {
 
@@ -41,6 +41,8 @@ export class OrganizationChartComponent implements OnInit {
   scrollBooster: any;
   scrollBoosterInitialized: boolean = false;
 
+  selectedUserBoxLayout: string = 'default';
+
   destroy: Subject<boolean> = new Subject<boolean>();
 
   constructor(private router: Router, private organizationChartService: OrganizationChartService) {
@@ -61,6 +63,7 @@ export class OrganizationChartComponent implements OnInit {
     this.checkForHash();
     this.getFirstAndLastLetter();
     this.start();
+    this.onResize();
   }
 
   updateScrollBooster() {
@@ -222,6 +225,17 @@ export class OrganizationChartComponent implements OnInit {
       setTimeout(() => {
         this.organizationChartService.setSelectedUserId(value);
       }, 500);
+    }
+  }
+
+  onResize() {
+    const x = window.innerWidth;
+    if (x >= 1280) {
+      this.selectedUserBoxLayout = 'default';
+    } else if (x >= 900 && x < 1280) {
+      this.selectedUserBoxLayout = 'small';
+    } else {
+      this.selectedUserBoxLayout = 'mobile';
     }
   }
 
