@@ -14,13 +14,14 @@ $space: 2rem;
   content: '';
   position: absolute;
   top: 0;
-  height: 1px;
+  height: 0;
+  border-top: 1px solid $lineColor;
   width: 50%;
-  background-color: $lineColor;
+  background-color: transparent;
 }
 
 .people > div:before {
-  left: -1px;
+  left: 0;
 }
 
 .people > div:after {
@@ -32,7 +33,7 @@ $space: 2rem;
 }
 
 .flex > .people > div:first-of-type:before {
-  width: calc(50% + 1px);
+  width: 50%;
 }
 
 .people > div:last-of-type:after {
@@ -55,20 +56,22 @@ $space: 2rem;
   content: '';
   position: absolute;
   bottom: 100%;
-  left: calc(50% - 1px);
+  left: 50%;
   height: $space;
-  width: 1px;
-  background-color: $lineColor;
+  width: 0;
+  border-left: 1px solid $lineColor;
+  background-color: transparent;
 }
 
 .flex > .peopleList:after {
   content: '';
   position: absolute;
   top: -$space;
-  left: calc(50% - 1px);
-  height: 1px;
-  width: calc(50% + (#{$space} / 2) + 1px);
-  background-color: $lineColor;
+  left: 50%;
+  height: 0;
+  border-top: 1px solid $lineColor;
+  width: calc(50% + (#{$space} / 2));
+  background-color: transparent;
 }
 
 
@@ -81,10 +84,11 @@ $space: 2rem;
   content: '';
   position: absolute;
   bottom: 100%;
-  left: calc(50% - 1px);
+  left: 50%;
   height: $space;
-  width: 1px;
-  background-color: $lineColor;
+  width: 0;
+  border-left: 1px solid $lineColor;
+  background-color: transparent;
   pointer-events: none;
 }
 
@@ -92,10 +96,10 @@ $space: 2rem;
   content: '';
   position: absolute;
   top: 100%;
-  left: calc(50% - 1px);
+  left: 50%;
   height: $space;
-  width: 1px;
-  background-color: $lineColor;
+  border-left: 1px solid $lineColor;
+  background-color: transparent;
   pointer-events: none;
 }
 
@@ -108,10 +112,10 @@ $space: 2rem;
   content: '';
   position: absolute;
   top: -2rem;
-  left: calc(50% - 1px);
+  left: 50%;
   height: $space;
-  width: 1px;
-  background-color: $lineColor;
+  border-left: 1px solid $lineColor;
+  background-color: transparent;
   pointer-events: none;
 }
 
